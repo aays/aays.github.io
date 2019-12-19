@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Ahmed Hasan</title>
-    <link>/projects/</link>
+    <link>https://aays.github.io/projects/</link>
     <description>Recent content in Projects on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://aays.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Recombination in the C. reinhardtii MT locus and consequences for selection efficacy</title>
-      <link>/projects/mt-locus/</link>
+      <link>https://aays.github.io/projects/mt-locus/</link>
       <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/projects/mt-locus/</guid>
+      <guid>https://aays.github.io/projects/mt-locus/</guid>
       <description>‘Sex’ in C. reinhardtii is determined by a dimorphic, crossover-suppressed mating type locus, which encodes an individual as either MT+ or MT-. C. reinhardtii is isogamous (equal sized gametes) which means there are no sex differences; hence the term ‘mating type’. The two alleles of the MT locus can be thought of as ‘X and Y chromosomes’, except that each individual only carries one and that they’re genetically very similar.</description>
     </item>
     
     <item>
       <title>Recombination rate variation and infrequent sex influence genetic diversity in C. reinhardtii</title>
-      <link>/projects/ld-paper/</link>
+      <link>https://aays.github.io/projects/ld-paper/</link>
       <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/projects/ld-paper/</guid>
+      <guid>https://aays.github.io/projects/ld-paper/</guid>
       <description>Recombination confers a major evolutionary advantage by breaking up linkage disequilibrium (LD) between harmful and beneficial mutations,thereby facilitating selection. However, in species that are only periodically sexual, such as many microbial eukaryotes, the realized rate of recombination is also affected by the frequency of sex, meaning that infrequent sex can increase the effects of selection at linked sites despite high recombination rates. Despite this, the rate of sex of most facultatively sexual species is unknown.</description>
     </item>
     
     <item>
       <title>hyde-hyde</title>
-      <link>/projects/hyde-hyde/</link>
+      <link>https://aays.github.io/projects/hyde-hyde/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/projects/hyde-hyde/</guid>
+      <guid>https://aays.github.io/projects/hyde-hyde/</guid>
       <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&#39;s Hyde and its variant Nate Finch&#39;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&#39;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
     </item>
     
     <item>
       <title>Endophytes as biocontrols for the Côte d’Ivoire Lethal Yellowing (CILY) disease</title>
-      <link>/projects/cily/</link>
+      <link>https://aays.github.io/projects/cily/</link>
       <pubDate>Mon, 01 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/projects/cily/</guid>
+      <guid>https://aays.github.io/projects/cily/</guid>
       <description>As part of my undergraduate research work, I attempted to identify endophytic microbes that may potentially be used as biocontrols against the Côte d’Ivoire Lethal Yellowing (CILY) disease, which had previously destroyed approximately 350 ha of coconut trees in the West African country. This was done by creating profiles of the microbial communities present within both infected and uninfected trees. A ‘dilution-to-extinction’ method of high-throughput culturing was used in order to cultivate both bacterial and fungal endophytes directly from samples collected from the town of Grand-Lahou, followed by molecular analyses for strain identification.</description>
     </item>
     

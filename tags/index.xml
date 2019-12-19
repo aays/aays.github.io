@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Ahmed Hasan</title>
-    <link>/tags/</link>
+    <link>https://aays.github.io/tags/</link>
     <description>Recent content in Tags on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://aays.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>research</title>
-      <link>/tags/research/</link>
+      <link>https://aays.github.io/tags/research/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/research/</guid>
+      <guid>https://aays.github.io/tags/research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>writing</title>
-      <link>/tags/writing/</link>
+      <link>https://aays.github.io/tags/writing/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/writing/</guid>
+      <guid>https://aays.github.io/tags/writing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/tags/r/</link>
+      <link>https://aays.github.io/tags/r/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>https://aays.github.io/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>/tags/git/</link>
+      <link>https://aays.github.io/tags/git/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>https://aays.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>latex</title>
-      <link>/tags/latex/</link>
+      <link>https://aays.github.io/tags/latex/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/latex/</guid>
+      <guid>https://aays.github.io/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>/tags/bash/</link>
+      <link>https://aays.github.io/tags/bash/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/bash/</guid>
+      <guid>https://aays.github.io/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>/tags/plot/</link>
+      <link>https://aays.github.io/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>https://aays.github.io/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
+      <link>https://aays.github.io/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>https://aays.github.io/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>/tags/regression/</link>
+      <link>https://aays.github.io/tags/regression/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/regression/</guid>
+      <guid>https://aays.github.io/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>/tags/css/</link>
+      <link>https://aays.github.io/tags/css/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/css/</guid>
+      <guid>https://aays.github.io/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>/tags/html/</link>
+      <link>https://aays.github.io/tags/html/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/html/</guid>
+      <guid>https://aays.github.io/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>/tags/hugo/</link>
+      <link>https://aays.github.io/tags/hugo/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hugo/</guid>
+      <guid>https://aays.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>theme</title>
-      <link>/tags/theme/</link>
+      <link>https://aays.github.io/tags/theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/theme/</guid>
+      <guid>https://aays.github.io/tags/theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>/tags/development/</link>
+      <link>https://aays.github.io/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/development/</guid>
+      <guid>https://aays.github.io/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>/tags/go/</link>
+      <link>https://aays.github.io/tags/go/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/go/</guid>
+      <guid>https://aays.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>/tags/golang/</link>
+      <link>https://aays.github.io/tags/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/golang/</guid>
+      <guid>https://aays.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>templates</title>
-      <link>/tags/templates/</link>
+      <link>https://aays.github.io/tags/templates/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/templates/</guid>
+      <guid>https://aays.github.io/tags/templates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>/tags/themes/</link>
+      <link>https://aays.github.io/tags/themes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/themes/</guid>
+      <guid>https://aays.github.io/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>/tags/jekyll/</link>
+      <link>https://aays.github.io/tags/jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/jekyll/</guid>
+      <guid>https://aays.github.io/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>migration</title>
-      <link>/tags/migration/</link>
+      <link>https://aays.github.io/tags/migration/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/migration/</guid>
+      <guid>https://aays.github.io/tags/migration/</guid>
       <description></description>
     </item>
     

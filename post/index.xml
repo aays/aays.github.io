@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ahmed Hasan</title>
-    <link>/post/</link>
+    <link>https://aays.github.io/post/</link>
     <description>Recent content in Posts on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://aays.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Consequences of recombination for mating type evolution in C. reinhardtii - a summary</title>
-      <link>/post/mt-locus/</link>
+      <link>https://aays.github.io/post/mt-locus/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/mt-locus/</guid>
+      <guid>https://aays.github.io/post/mt-locus/</guid>
       <description>Motivation Volvocine algae have been a model lineage for studying the evolutionary transition from isogamy (equal sized gametes) to anisogamy (unequal sized gametes). Instead of entire sex chromosomes, isogamous systems tend to have smaller and less differentiated mating type (MT) loci. Part of this putatively stems from these systems simply having less secondary sexual characteristics, and thus comparatively minimal need to segregate certain genes in one MT allele over another (under the sexually antagonistic selection model).</description>
     </item>
     
     <item>
       <title>Recombination rate variation and linked selection in C. reinhardtii v2.0 - a summary</title>
-      <link>/post/ld-paper/</link>
+      <link>https://aays.github.io/post/ld-paper/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ld-paper/</guid>
+      <guid>https://aays.github.io/post/ld-paper/</guid>
       <description>In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) manuscript to the preprint server BioRxiv. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &amp;ndash; such is the power of preprint servers!
 Like in most endeavours in science, however, there&#39;s always room for improvement, and I&#39;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large.</description>
     </item>
     
     <item>
       <title>Migrating an Overleaf project to GitHub</title>
-      <link>/post/migrating-an-overleaf-project-to-github/</link>
+      <link>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/migrating-an-overleaf-project-to-github/</guid>
+      <guid>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</guid>
       <description>I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all.</description>
     </item>
     
     <item>
       <title>Setting up a simple cleanup log in bash</title>
-      <link>/post/setting-up-a-simple-cleanup-log-in-bash/</link>
+      <link>https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
+      <guid>https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
       <description>A simple function to automatically append info about deleted files to a cleanup log!
 Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
 Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence.</description>

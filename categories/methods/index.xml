@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>methods on Ahmed Hasan</title>
-    <link>/categories/methods/</link>
+    <link>https://aays.github.io/categories/methods/</link>
     <description>Recent content in methods on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/methods/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://aays.github.io/categories/methods/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migrating an Overleaf project to GitHub</title>
-      <link>/post/migrating-an-overleaf-project-to-github/</link>
+      <link>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</link>
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/migrating-an-overleaf-project-to-github/</guid>
+      <guid>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</guid>
       <description>I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all.</description>
     </item>
     
     <item>
       <title>Setting up a simple cleanup log in bash</title>
-      <link>/post/setting-up-a-simple-cleanup-log-in-bash/</link>
+      <link>https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
+      <guid>https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
       <description>A simple function to automatically append info about deleted files to a cleanup log!
 Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
 Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence.</description>

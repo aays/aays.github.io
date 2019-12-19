@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Ahmed Hasan</title>
-    <link>/categories/publications/</link>
+    <link>https://aays.github.io/categories/publications/</link>
     <description>Recent content in Publications on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/publications/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://aays.github.io/categories/publications/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Consequences of recombination for mating type evolution in C. reinhardtii - a summary</title>
-      <link>/post/mt-locus/</link>
+      <link>https://aays.github.io/post/mt-locus/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/mt-locus/</guid>
+      <guid>https://aays.github.io/post/mt-locus/</guid>
       <description>Motivation Volvocine algae have been a model lineage for studying the evolutionary transition from isogamy (equal sized gametes) to anisogamy (unequal sized gametes). Instead of entire sex chromosomes, isogamous systems tend to have smaller and less differentiated mating type (MT) loci. Part of this putatively stems from these systems simply having less secondary sexual characteristics, and thus comparatively minimal need to segregate certain genes in one MT allele over another (under the sexually antagonistic selection model).</description>
     </item>
     
     <item>
       <title>Recombination rate variation and linked selection in C. reinhardtii v2.0 - a summary</title>
-      <link>/post/ld-paper/</link>
+      <link>https://aays.github.io/post/ld-paper/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ld-paper/</guid>
+      <guid>https://aays.github.io/post/ld-paper/</guid>
       <description>In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) manuscript to the preprint server BioRxiv. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &amp;ndash; such is the power of preprint servers!
 Like in most endeavours in science, however, there&#39;s always room for improvement, and I&#39;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large.</description>
     </item>
