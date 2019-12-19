@@ -118,36 +118,6 @@
   </url>
   
   <url>
-    <loc>https://aays.github.io/posts/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aays.github.io/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aays.github.io/posts/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aays.github.io/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aays.github.io/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aays.github.io/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aays.github.io/tags/css/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -169,6 +139,11 @@
   
   <url>
     <loc>https://aays.github.io/categories/hugo/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aays.github.io/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
