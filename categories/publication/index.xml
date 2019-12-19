@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>publication on Ahmed Hasan</title>
+    <link>/categories/publication/</link>
+    <description>Recent content in publication on Ahmed Hasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recombination rate variation and linked selection in C. reinhardtii v2.0 - a summary</title>
+      <link>/post/ld-paper/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ld-paper/</guid>
+      <description>In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) manuscript to the preprint server BioRxiv. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &amp;ndash; such is the power of preprint servers!
+Like in most endeavours in science, however, there&#39;s always room for improvement, and I&#39;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large.</description>
+    </item>
+    
+  </channel>
+</rss>

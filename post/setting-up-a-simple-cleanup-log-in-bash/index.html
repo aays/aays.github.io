@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.60.0" />
+
+    
+    
+    
+
+<title>Setting up a simple cleanup log in bash • Ahmed Hasan</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setting up a simple cleanup log in bash"/>
+<meta name="twitter:description" content="A simple function to automatically append info about deleted files to a cleanup log!
+Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
+Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence."/>
+
+<meta property="og:title" content="Setting up a simple cleanup log in bash" />
+<meta property="og:description" content="A simple function to automatically append info about deleted files to a cleanup log!
+Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
+Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/setting-up-a-simple-cleanup-log-in-bash/" />
+<meta property="article:published_time" content="2017-08-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-18T23:23:51-05:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.af856db48b94839b24a0498585be38f62e441490abbb1c334fee016edd81d3c4.css" integrity="sha256-r4VttIuUg5skoEmFhb449i5EFJCruxwzT&#43;4Bbt2B08Q=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.126e7d75240acc946d34d6ccb2982ed4c394a5fe34e73e1a2119ca951bcf119d.css" integrity="sha256-Em59dSQKzJRtNNbMspgu1MOUpf405z4aIRnKlRvPEZ0=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="/">Ahmed Hasan</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="/img/profile.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Ahmed Hasan</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/post/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/projects/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vitae/">
+						<span>CV</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/ahmedrhasan" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/aays" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:ahmed.hasan@mail.utoronto.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Setting up a simple cleanup log in bash</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 1, 2017
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/methods">METHODS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/bash">bash</a>
+          
+      
+    
+    
+    <br/>
+    
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Contents</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>A simple function to automatically append info about deleted files to a cleanup log!</p>
+<h3 id="motivation">Motivation</h3>
+<p>(I originally wanted to just tweet this little trick out, but 140 characters is
+rarely sufficient for this sort of thing.)</p>
+<p>Anyhow - sometimes, when dealing with large amounts of intermediate files in a
+project, it can be useful to log what's being deleted when and where. Here's a
+quick bash trick for setting up a function that logs a) which files where
+deleted, b) when they were deleted, and c) how much space was freed up as a
+consequence.</p>
+<p>I'm sure there are more elegant ways to do this, but this has worked well for me
+thus far!</p>
+<h3 id="method">Method</h3>
+<p>First, let's create a log file for our project. This is where our function will log everything we delete.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch path/to/projectdir/cleanup.log
+</code></pre></div><p>Next, we'll open up our <code>.bash_profile</code> in order to create our function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi ~/.bash_profile
+</code></pre></div><p>Here's the template for my function, which I call <code>rml()</code> (&lsquo;remove and log&rsquo;).
+Paste the following anywhere within the body of your <code>.bash_profile</code>. Make sure
+to use the full path to your <code>cleanup.log</code> file from the root dir.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+printf <span style="color:#e6db74">&#39;\n&#39;</span> &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
+date &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
+echo $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
+du -hcs $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
+rm $1
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Annotated:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+printf <span style="color:#e6db74">&#39;\n&#39;</span> &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># skip a line for readability</span>
+date &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># log the date of deletion</span>
+echo $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># the name of the file</span>
+du -hcs $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># the size of the file</span>
+rm $1 <span style="color:#75715e"># and finally, delete it</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Feel free to customize this however you'd like! When you're done, exit out of
+<code>vi</code> and make sure to <code>source</code> your <code>.bash_profile</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bash_profile
+</code></pre></div><p>You only have to do this once, and then you're ready to go.</p>
+<p>From there on out, just use <code>rml</code> in place of <code>rm</code> to log a file's deletion. For
+instance, the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml projectdir/bigintermediatefile.txt
+</code></pre></div><p>will automatically add something like this to <code>cleanup.log</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Tue Aug  <span style="color:#ae81ff">1</span> 12:09:01 EDT <span style="color:#ae81ff">2017</span>
+bigintermediatefile.txt
+6.0G    bigintermediatefile.txt
+6.0G    total
+</code></pre></div><p>Enjoy!</p>
+
+  </div>
+  
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

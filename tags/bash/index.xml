@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Ahmed Hasan</title>
+    <link>/tags/bash/</link>
+    <description>Recent content in bash on Ahmed Hasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up a simple cleanup log in bash</title>
+      <link>/post/setting-up-a-simple-cleanup-log-in-bash/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
+      <description>A simple function to automatically append info about deleted files to a cleanup log!
+Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
+Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence.</description>
+    </item>
+    
+  </channel>
+</rss>
