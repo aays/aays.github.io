@@ -6,10 +6,20 @@
     <description>Recent content in R on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Migrating to Hugo &#43; blogdown</title>
+      <link>https://aays.github.io/post/migrating-to-hugo-blogdown/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/post/migrating-to-hugo-blogdown/</guid>
+      <description>Introduction So my shiny new Hugo/blogdown website has been up for two weeks now without me having posted anything about it, which goes to show that this second tweet:
+Will probably put together a blog post detailing how I made this work if I get time over the weekend. It&amp;#39;s super worth it if you&amp;#39;re looking to switch - not to mention how neat it is to develop and manage a site entirely through RStudio</description>
+    </item>
     
     <item>
       <title>Recombination rate variation and linked selection in C. reinhardtii v2.0 - a summary</title>
