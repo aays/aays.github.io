@@ -6,7 +6,7 @@
     <description>Recent content on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -30,6 +30,16 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&#39;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Hugo &#43; blogdown</title>
+      <link>https://aays.github.io/post/migrating-to-hugo-blogdown/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/post/migrating-to-hugo-blogdown/</guid>
+      <description>Introduction So my shiny new Hugo/blogdown website has been up for two weeks now without me having posted anything about it, which goes to show that this second tweet:
+Will probably put together a blog post detailing how I made this work if I get time over the weekend. It&amp;#39;s super worth it if you&amp;#39;re looking to switch - not to mention how neat it is to develop and manage a site entirely through RStudio</description>
     </item>
     
     <item>
