@@ -67,7 +67,6 @@
     
     
 
-    
 </head>
 
 
@@ -165,7 +164,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2020 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -239,6 +238,37 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
   
   
   <div class="post">
+    
+      <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     
 
 
@@ -330,7 +360,7 @@ for an MT+ region that had a match in the alignment as well as the matching MT-
 sequences. Following some bioinformatic wrangling, this resulted in a large MT+
 sized ‘master alignment’, but with all non-shared regions masked. All shared
 regions, meanwhile, contained both MT+ and aligned MT- sequence from the LASTZ
-alignment, enabling the calculation of LD, F<sub>ST</sub>, and more across
+alignment, enabling the calculation of LD, <span class="math inline">\(F_{ST}\)</span>, and more across
 shared regions. Scripts for this alignment process can be found in the <a href="https://github.com/aays/2019-mt-locus/tree/master/analysis/alignment-lastz">project
 repo</a>.</p>
 </div>
@@ -339,7 +369,7 @@ repo</a>.</p>
 <div id="breakdown-of-ld-across-the-c-and-t-domains" class="section level3">
 <h3>Breakdown of LD across the C and T domains</h3>
 <p>First, we looked at LD in and out of the three domains of the MT locus as well
-as the surrounding autosomal regions. The measure we used is called ZnS (Kelly
+as the surrounding autosomal regions. The measure we used is called <span class="math inline">\(Z_{nS}\)</span> (Kelly
 1997), which is the average of all pairwise estimates of LD in a region. 1
 indicates complete LD (i.e. no recombination) while 0 indicates no LD
 whatsoever (i.e. high recombination).</p>
@@ -353,7 +383,7 @@ is still not fixed at 1 across windows, despite the suppression of crossovers.</
 </div>
 <div id="differentiation-between-shared-regions-inversely-scaled-with-recombination-rate" class="section level3">
 <h3>Differentiation between shared regions inversely scaled with recombination rate</h3>
-<p>Next, we calculated differentiation (F<sub>ST</sub>) across 1 kb windows of
+<p>Next, we calculated differentiation (<span class="math inline">\(F_{ST}\)</span>) across 1 kb windows of
 sequence and compared its levels of LD. A strong correlation here is expected;
 by definition, as differentiation increases, so too does the level at which
 alleles covary within each of the two ‘populations’ (MT alleles, in this case)
@@ -389,9 +419,9 @@ be below 1 under purifying selection, which is expected given that most
 mutations are deleterious. However, <em>how much smaller than 1</em> it is reflects
 the strength of purifying selection. Very low values suggest nonsynonymous
 mutations are being purged efficiently while synonymous diversity is preserved.</p>
-<p>We calculated π<sub>N</sub> / π<sub>S</sub> for all genes across the MT locus,
+<p>We calculated <span class="math inline">\(\pi_{N} / \pi_{S}\)</span> for all genes across the MT locus,
 and compared them to LD levels for shared genes. We observe that as LD goes up
-(i.e. recombination rates go down) π<sub>N</sub> / π<sub>S</sub> values
+(i.e. recombination rates go down) <span class="math inline">\(\pi_{N} / \pi_{S}\)</span> values
 increase, suggesting weaker selection efficacy. This suggests that genes with
 greater rates of genetic exchange show more efficient selection! (Fig. 3b in
 the paper) We also find no significant difference between selection efficacy in
@@ -452,7 +482,7 @@ data itself to GitHub (I’m a little reluctant to do so with data files at the
 order of gigabytes…) but I’m going to look into how I can make data beyond
 just the short read files available upon publication.</p>
 <p>I do still think there are a few things to be ironed out as far as making this
-project wholly reproducible.I wanted to work towards the ideal of creating
+project wholly reproducible. I wanted to work towards the ideal of creating
 a repo that allows you to ‘fully regenerate the paper’ via a single script,
 and didn’t quite meet that lofty goal. Still, this has been an excellent
 learning experience and one I would strongly suggest anyone in bioinformatics
@@ -464,6 +494,22 @@ on the repo)</p>
 on the paper or anything else, please reach out via email or on Twitter!</p>
 </div>
 
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
   </div>
   
 
@@ -484,6 +530,27 @@ on the paper or anything else, please reach out via email or on Twitter!</p>
 <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+        
+    
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["r, python, bash"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
 
 
 
@@ -501,7 +568,6 @@ on the paper or anything else, please reach out via email or on Twitter!</p>
     });
   }
 </script>
-
 
 
 

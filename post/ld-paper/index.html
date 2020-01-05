@@ -69,7 +69,6 @@ Like in most endeavours in science, however, there&#39;s always room for improve
     
     
 
-    
 </head>
 
 
@@ -167,7 +166,7 @@ Like in most endeavours in science, however, there&#39;s always room for improve
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2020 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -244,6 +243,37 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
   
   
   <div class="post">
+    
+      <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     <p>In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) <a href="https://www.biorxiv.org/content/early/2018/11/05/340992">manuscript</a> to the preprint server <a href="biorxiv.org">BioRxiv</a>. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &ndash; such is the power of preprint servers!</p>
 <p>Like in most endeavours in science, however, there's always room for improvement, and I've been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large. Here, I'm going to briefly summarise the paper before covering what's been changed so far in this iteration of the manuscript and why.</p>
 <h2 id="overview">Overview</h2>
@@ -282,6 +312,22 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>This manuscript has been in prep since about three months into my graduate school career, and has undergone various changes and makeovers as further analyses were added. Beyond that, there still is room for improvement, and I'll be looking for ways to update the manuscript further. As someone with little to no population genetics background upon starting graduate school, it's certainly been challenging putting this work together thus far, but equally as rewarding at the same time.</p>
 <p>Of course, I'd love to hear any further thoughts and comments on the manuscript if you have any &ndash; please feel more than welcome to reach out via email or on Twitter!</p>
 
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
   </div>
   
 
@@ -319,7 +365,6 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
     });
   }
 </script>
-
 
 
 

@@ -69,7 +69,6 @@ After returning from the conference (and recovering from a good bit of jet lag) 
     
     
 
-    
 </head>
 
 
@@ -167,7 +166,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2020 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -241,6 +240,37 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
   
   
   <div class="post">
+    
+      <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     <p>I've been a big proponent of <a href="www.overleaf.com">Overleaf</a> for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.</p>
 <p>After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all. Why? Partially in the spirit of working open, and making my TeX and R code available to anyone who cares to use it &ndash; and partially just to immortalize that mini-project within its own repo.</p>
 <p>Turns out Overleaf makes this even easier than I'd expected it to be. My naive assumption was that I'd have to download the files from the Overleaf project and manually put together a GitHub repo, but a few shell commands and tinkering on GitHub is all it takes!</p>
@@ -294,6 +324,22 @@ git commit -m <span style="color:#e6db74">&#39;add plot code&#39;</span>
 git push -u origin master
 </code></pre></div><p>Enjoy!</p>
 
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
   </div>
   
 
@@ -331,7 +377,6 @@ git push -u origin master
     });
   }
 </script>
-
 
 
 

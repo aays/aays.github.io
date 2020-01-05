@@ -67,7 +67,6 @@
     
     
 
-    
 </head>
 
 
@@ -165,7 +164,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2020 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -216,6 +215,37 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
   
   
   <div class="post">
+    
+      <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     <p>As part of my undergraduate research work, I attempted to identify endophytic
 microbes that may potentially be used as biocontrols against the Côte d’Ivoire
 Lethal Yellowing (CILY) disease, which had previously destroyed approximately
@@ -238,6 +268,22 @@ with the coconut lethal yellowing phytoplasma in Grand-Lahou, Côte d’Ivoire.
 summary</a> of the project that I
 made.</p>
 
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
   </div>
   
 
@@ -262,8 +308,18 @@ made.</p>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+        
     
     <script type="text/javascript">
+        
+        hljs.configure({languages: ["r, python, bash"]});
         
         hljs.initHighlightingOnLoad();
     </script>
@@ -286,7 +342,6 @@ made.</p>
     });
   }
 </script>
-
 
 
 

@@ -289,7 +289,8 @@ writing it in a fairly stream-of-consciousness fashion; you’ve been warned.</p
 <p>(Note, however, that this post will <em>not</em> be a step-by-step tutorial on how to
 create a website with blogdown – much better versions of that already exist,
 including <a href="https://bookdown.org/yihui/blogdown/">the official blogdown guide</a> by
-Yihui Xie, Amber Thomas, and Alison Presmanes Hill.)</p>
+Yihui Xie, Amber Thomas, and Alison Presmanes Hill, as well as this
+great <a href="https://mltconsecol.github.io/post/20170123_blogdown_hugo/">quick-start blog post</a> by Mike Treglia.)</p>
 </div>
 <div id="why-switch" class="section level2">
 <h2>Why switch?</h2>
@@ -298,7 +299,7 @@ on GitHub Pages; more specifically, a very lightly modified version
 of Dean Attali’s <a href="https://github.com/daattali/beautiful-jekyll">Beautiful Jekyll</a> theme. I have
 no complaints with the theme itself – it’s super nice to look at and
 was very straightforward to get started with. But there were a few
-things I wanted that Jekyll could not provide:</p>
+things I wanted that Jekyll alone could not provide:</p>
 <div id="the-ability-to-write-blog-posts-in-r-markdown" class="section level3">
 <h3>1. The ability to write blog posts in R Markdown</h3>
 <p>This might seem like an oddly specific need, so context is probably helpful. For
@@ -334,9 +335,12 @@ for i, num in enumerate(l):
 ## currently at number 2
 ## currently at number 3</code></pre>
 <p>some Bash:</p>
-<pre class="bash"><code>word=hello
-echo $word</code></pre>
-<pre><code>## hello</code></pre>
+<pre class="bash"><code>for i in {1..5}; do echo $i; done</code></pre>
+<pre><code>## 1
+## 2
+## 3
+## 4
+## 5</code></pre>
 <p>and, of course, some R:</p>
 <pre class="r"><code>library(magrittr)
 library(broom)
@@ -365,23 +369,23 @@ expressions.</p>
 <p>On our EEB313 course website, anything written in math mode in a lecture’s Rmd
 renders perfectly on the website (see <a href="https://uoftcoders.github.io/rcourse/lec13-theory.html">this fantastic lecture on mathematical
 modelling</a> by Amber Gigi Hoi and Zoe Humphries, who I was fortunate to
-teach the course with this year) and that was something I really wanted for
-myself. On my Jekyll website, writing out population genetic statistics such as
+teach the course with this year). This was something I really wanted for
+myself; on my original website, writing out population genetic statistics such as
 <span class="math inline">\(\theta_{\pi}\)</span> and <span class="math inline">\(F_{ST}\)</span> required copy and pasting in special characters and
 using HTML tags like &lt;sub&gt; for subscripts. Really, really not fun.</p>
 <p>In retrospect, given what I had to do to enable math mode for my Hugo website
-(more on that below) this probably could have worked in Jekyll as well, so I
-don’t want to knock the latter at all for this point. But it does feel good to
-be able to write math right alongside executable code chunks!</p>
+(more on that below) I could have probably done the same for my earlier website,
+so I don’t want to knock the latter at all for this point. But it does feel good
+to be able to write math right alongside executable code chunks!</p>
 </div>
 <div id="doing-everything-from-rstudio" class="section level3">
 <h3>3. Doing everything from RStudio</h3>
 <p>If you’ve ever had the misfortune of asking me about my long-winded opinions on
-IDEs and such, you’ll know I’d be hard-pressed to name anything that I believe
-beats the simple efficiency of <code>vim</code> and <code>tmux</code> – and thus refuse to use
-anything else. The only exception to that remains RStudio, which not only does
-every single thing right, but is also maintained by an excellent team that is
-constantly adding relevant and useful features.</p>
+IDEs and such, you’ll know I’d generally be hard-pressed to name anything that I
+believe beats the simple efficiency of <code>vim</code> and <code>tmux</code> – and thus refuse to
+use anything else. The only exception to that remains RStudio, which not only
+does every single thing right, but is also maintained by an excellent team that
+is constantly adding relevant and useful features.</p>
 <p>I particularly love RStudio’s projects feature, with also integrates beautifully
 with Git/GitHub and keeps everything nice and self-contained. The prospect of
 maintaining the many disparate components of a website (blog posts, about/CV
@@ -397,9 +401,10 @@ official guide that I linked above (and <a href="https://bookdown.org/yihui/blog
 covers how to get started with the blogdown package as well as <a href="https://gohugo.io/">Hugo</a>, the
 static site generator with which blogdown does its thing. Bear in mind that
 although the guide is generally structured in the order of steps you’d take to
-build and deploy a website, you may find yourself jumping around sections here
-and there if you’re migrating from an existing static website instead of
-creating one from scratch if you’re an impatient soul like myself.</p>
+build and deploy a website, it’s quite heavy on details as opposed to just being
+a straight step-by-step tutorial and nothing but. This is obviously a good thing
+and makes the book a great reference, but if you’re an impatient soul like
+myself, you’ve been warned!</p>
 <p>At the very least, I still recommend going through all of Chapters 1 and 2, and
 picking your theme (section 1.6) at some point along the way. There are a ton of
 great themes out there, but it’s worth keeping in mind that there are often
@@ -407,28 +412,29 @@ slight differences in the <code>config.toml</code> files between them. This mean
 config setting in one theme may not be the same as another (i.e. syntax
 highlighting might be enabled with <code>highlight = true</code> in one theme, but
 <code>highlightjs = true</code> in another).</p>
-<p>Once you’ve chosen a theme, RStudio’s own New Project dialog actually
-includes a ‘Create website using blogdown’ option, which allows you
-to simply list the Git repo hosting a given theme and have RStudio import
-it in full. I opted for the <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> theme as a starting point,
-because I was very adamant about wanting a nice looking sidebar.</p>
+<p>Once you’ve chosen a theme, RStudio’s own New Project dialog actually includes a
+‘Create website using blogdown’ option, which allows you to simply list the Git
+repo hosting a given theme and have RStudio import it in full. I opted for the
+<a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> theme by <a href="https://github.com/htr3n">htr3n</a> as a starting point, because a)
+it was nice and minimalistic and b) I was very, very adamant about wanting a
+nice looking sidebar.</p>
+<p>I’d recommend really exploring every nook and cranny of your newly downloaded
+theme before making major modifications or starting to migrate your own content.
+I talk a bit more about the directory structure (which was admittedly trickier
+to figure out than I’d have liked) below.</p>
 <p>Note that the website can be deployed locally from within RStudio (or the
 Terminal – more on that below) at any time. Not only is this unbelievably
 useful to preview changes (especially if/when you’re initially modifying the
 aesthetics of the theme to suit your needs), it in fact updates instantaneously
 every time a change has been made. I can’t stress just how much of a time
 saver this has been.</p>
-<p>Finally, I’d recommend really exploring every nook and cranny of your
-newly downloaded theme before making major modifications or starting to
-migrate your own content. I talk a bit more about the directory structure
-(which was admittedly trickier to figure out than I’d have liked) below.</p>
 <p>And now for some smaller tips on hurdles I encountered along the way! Please
 note that these are more pointers than tutorials, and the reference material
-I’ve linked and will link along the way will be substantially more useful
-for getting a base understanding of what’s going on. I’m also not really
-going to avoid jargon too much – I’m envisioning these tips to be
-useful once you’ve already got a theme loaded, have done some exploring,
-and are now getting into the creation/migration process.</p>
+I’ve linked and will link along the way will be substantially more useful for
+getting a base understanding of what’s going on. I’m also not really going to
+avoid jargon too much – I’m envisioning these tips to be useful once you’ve
+already got a theme loaded, have done some exploring/reading, and are now
+getting into the creation/migration process.</p>
 </div>
 <div id="some-tips" class="section level2">
 <h2>Some tips</h2>
@@ -476,7 +482,7 @@ server, but I’ve found that running <code>hugo server</code> in Bash while in 
 root directory of your site does the same thing. The advantage of the latter
 is that it’ll reload when you make purely cosmetic changes, which I found
 useful when initially making some sweeping design edits. Conversely,
-I found <code>serve_site</code> doesn’t always respond to those changes, for whatever reason.
+I found <code>serve_site</code> didn’t always respond to those changes, for whatever reason.
 This may be one of those (frequent) instances where I’m just doing something
 terribly wrong, so your mileage may vary.</p>
 <p>One clear difference between the two (and one I’m actually quite sure of!) is
@@ -488,17 +494,18 @@ intuitive sense to me, since <code>hugo</code> isn’t explicitly built to pull 
 an R kernel and selectively run chunks of code in a text file before rendering
 as HTML, whereas blogdown is all about compiling those Rmd files.</p>
 <p>Finally – and this isn’t explicitly about getting a local server going, but has
-been helpful – running either of <code>blogdown::build_site</code> in R or <code>hugo</code> in Bash
-while in your root dir will make Hugo rebuild your site. Useful in a pinch, and
-my goodness is it fast.</p>
+been helpful – running either of <code>blogdown::build_site</code> in R or just <code>hugo</code> in
+Bash while in your root dir will make Hugo rebuild your site. Useful in a pinch,
+and my goodness is it fast.</p>
 </div>
 <div id="adding-your-own-parameters" class="section level3">
 <h3>Adding your own parameters</h3>
 <div id="post-specific-parameters" class="section level4">
 <h4>Post-specific parameters</h4>
-<p>Say you want to create a parameter that designates a post as being
-about an undergraduate project. In my case, I wanted to do this because
-I wanted that post to render in a separate section in my Projects page.</p>
+<p>One challenge I faced when putting together the Projects page involved
+designating a given project as having been from my undergrad years. In my case,
+I wanted to do this because I wanted that post to render in a separate section
+in my Projects page.</p>
 <p>In the hyde-hyde theme, each project in the Projects page is rendered from a
 separate md file. In the md file pertaining to this undergrad project,
 I added the following in the YAML header:</p>
@@ -507,7 +514,7 @@ I added the following in the YAML header:</p>
 accessed via <code>.Data.Pages</code>, with this parameter in particular via
 <code>Params.undergrad</code>. To be honest, I’m still not super comfortable with the
 syntax, but I fiddled with it enough to get it working this one time
-so that’s about the extent of what I could share.</p>
+so that’s about the extent of what I can share.</p>
 <pre class="html"><code>    &lt;h2&gt;Undergraduate Research&lt;/h2&gt;
     &lt;section&gt;
         &lt;div class=&quot;portfolio_content&quot;&gt;
@@ -521,7 +528,8 @@ What this does is render all pages where <code>undergrad == true</code>, and the
 by date with most recent first. Removing the <code>ByDate.Reverse</code> bit would just
 render the range of posts fulfulling that criterion. This is a modification of
 code that was already in this file as part of the original theme, but works for
-me just fine.</p>
+me just fine. There’s tons more documentation to be found on <a href="https://gohugo.io/content-management/">the Hugo
+docs</a> if you’d like to do some reading of your own.</p>
 </div>
 <div id="global-parameters" class="section level4">
 <h4>Global parameters</h4>
@@ -542,7 +550,7 @@ parameter <code>showchunk</code>:</p>
 <pre class="html"><code>{{ if .Site.Params.showchunk }}
   &lt;p&gt;I am a chunk of stuff you want to have the option of hiding globally.&lt;/p&gt;
 {{ end }}</code></pre>
-<p>And now you can enable/disable parts of your HTML at will.</p>
+<p>And now you can enable/disable parts of your HTML at will using <code>.Site.Params</code>.</p>
 </div>
 </div>
 <div id="math-mode-mathjax-support" class="section level3">
@@ -599,6 +607,9 @@ what the rest of your site – <code>config.toml</code>, your <code>layouts</cod
 folders, etc – looks like. I figured it’s unlikely I’ll make many major changes
 to it, so this at the very least means that my site code lives outside of just
 my computer.</p>
+<p>If you’d like to go the whole nine yards with maintaining nested Git repos, the
+method is laid out quite nicely near the bottom of <a href="https://mltconsecol.github.io/post/20170123_blogdown_hugo/">this blog
+post</a>.</p>
 </div>
 </div>
 <div id="conclusion-reading-list" class="section level2">
@@ -611,6 +622,10 @@ to boot.</p>
 <p>Reading List:</p>
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/">The official blogdown guide</a></li>
+<li><a href="https://mltconsecol.github.io/post/20170123_blogdown_hugo/">Getting Going with Blogdown &amp; Hugo</a>
+<ul>
+<li>A great quick-start guide if you’re itching to get going</li>
+</ul></li>
 <li><a href="https://www.jakewiesler.com/blog/hugo-directory-structure/">Hugo’s directory structure, explained</a></li>
 <li><a href="https://divadnojnarg.github.io/blog/mathjax/">Setting MathJax with Hugo</a></li>
 <li><a href="https://community.rstudio.com/t/what-is-hard-about-blogdown/8108">What is hard about blogdown?</a>
@@ -623,6 +638,22 @@ bits of info + ways to avoid common pitfalls listen in there</li>
 </ul>
 </div>
 
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
   </div>
   
 
@@ -680,37 +711,6 @@ bits of info + ways to avoid common pitfalls listen in there</li>
       collapseDepth: 4
     });
   }
-</script>
-
-
-
-  <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    
-    
-    
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
 </script>
 
 
