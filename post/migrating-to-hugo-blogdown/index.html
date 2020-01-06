@@ -556,13 +556,14 @@ parameter <code>showchunk</code>:</p>
 <div id="math-mode-mathjax-support" class="section level3">
 <h3>Math mode (MathJax) support</h3>
 <p>So, some not great news – most Hugo themes don’t natively include MathJax
-support, which means that writing, say, the expected number of mutations between
-two chromosomes tends to render like this:</p>
+support, which means that writing, say, the expected genetic diversity in a
+population tends to render like this:</p>
 <p><span class="math display">\[ \theta = 4N_{e}\mu \]</span></p>
 <p>instead of <span class="math inline">\(\theta = 4N_{e}\mu\)</span>. Fixing this was a bit frustrating, but the
 solution I eventually found (via <a href="https://divadnojnarg.github.io/blog/mathjax/">this great blog post</a>) boiled down to:</p>
 <ol style="list-style-type: decimal">
-<li><p>In <code>layouts/partials</code>, create a file called <code>mathjax_support.html</code> containing the second snippet of code in the above blog post.</p></li>
+<li><p>In <code>layouts/partials</code>, create a file called <code>mathjax_support.html</code> containing
+the second snippet of code in the above blog post.</p></li>
 <li><p>The post above recommends including the file in <code>header.html</code> or
 <code>footer.html</code>. Maybe it’s my theme, but I had little success with either. In my
 case, it was adding it to <code>layouts/partials/page-single/content.html</code> that did
