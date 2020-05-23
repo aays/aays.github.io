@@ -6,10 +6,19 @@
     <description>Recent content on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recombination rate variation and infrequent sex influence genetic diversity in C. reinhardtii</title>
+      <link>https://aays.github.io/projects/ld-paper/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/projects/ld-paper/</guid>
+      <description>Recombination confers a major evolutionary advantage by breaking up linkage disequilibrium between harmful and beneficial mutations, thereby facilitating selection. However, in species that are only periodically sexual, such as many microbial eukaryotes, the realized rate of recombination is also affected by the frequency of sex, meaning that infrequent sex can increase the effects of selection at linked sites despite high recombination rates. Despite this, the rate of sex of most facultatively sexual species is unknown.</description>
+    </item>
     
     <item>
       <title>Migrating to Hugo &#43; blogdown</title>
@@ -28,6 +37,15 @@ Will probably put together a blog post detailing how I made this work if I get t
       
       <guid>https://aays.github.io/projects/mt-locus/</guid>
       <description>‘Sex’ in C. reinhardtii is determined by a dimorphic, crossover-suppressed mating type locus, which encodes an individual as either MT+ or MT-. C. reinhardtii is isogamous (equal sized gametes) which means there are no sex differences; hence the term ‘mating type’. The two alleles of the MT locus can be thought of as ‘X and Y chromosomes’, except that each individual only carries one and that the alleles are genetically very similar.</description>
+    </item>
+    
+    <item>
+      <title>Quantitative Methods in R for Biology - a live-coding undergraduate course</title>
+      <link>https://aays.github.io/projects/rcourse/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/projects/rcourse/</guid>
+      <description>During the Fall 2018 and Fall 2019 semesters, I was part of the instructor team for a third-year course on quantitative methods in R, pitched by UofT Coders and adapted from Dr. Christie Bahlai&#39;s Reproducible Quantitative Methods course. The course aims to teach undergraduate students at the third-year level or above the foundations for reproducible data analysis in R, and is taught entirely using the live-coding format used in Carpentries workshops.</description>
     </item>
     
     <item>
@@ -57,15 +75,6 @@ Like in most endeavours in science, however, there&#39;s always room for improve
       <guid>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</guid>
       <description>I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all.</description>
-    </item>
-    
-    <item>
-      <title>Recombination rate variation and infrequent sex influence genetic diversity in C. reinhardtii</title>
-      <link>https://aays.github.io/projects/ld-paper/</link>
-      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://aays.github.io/projects/ld-paper/</guid>
-      <description>Recombination confers a major evolutionary advantage by breaking up linkage disequilibrium (LD) between harmful and beneficial mutations,thereby facilitating selection. However, in species that are only periodically sexual, such as many microbial eukaryotes, the realized rate of recombination is also affected by the frequency of sex, meaning that infrequent sex can increase the effects of selection at linked sites despite high recombination rates. Despite this, the rate of sex of most facultatively sexual species is unknown.</description>
     </item>
     
     <item>
@@ -103,7 +112,8 @@ Anyhow - sometimes, when dealing with large amounts of intermediate files in a p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/about/</guid>
-      <description>I’m currently a PhD candidate in Prof. Rob Ness’s lab at the University of Toronto Mississauga, trying to answer fundamental questions about how recombination rate variation impacts genome evolution using the model microbe Chlamydomonas reinhardtii. Although I dabble in wet lab work, my approaches are primarily computational. Most of my work is done in Python, R (I am an unapologetic tidyverse enthusiast), and the Unix shell/bash; I&#39;m passionate about programming in general, from both development and teaching perspectives.</description>
+      <description>I’m currently a PhD candidate in Prof. Rob Ness’s lab at the University of Toronto Mississauga. I am broadly interested in meiotic recombination, and use lab-based and computational approaches to better understand how recombination rate variation affects genome evolution.
+Outside of my research work, I am also passionate about teaching programming skills for scientific research, with an emphasis on reproducible and open science. I have taught several Carpentries workshops over the course of my PhD, in addition to running programming workshops at my campus with UofT Coders.</description>
     </item>
     
     <item>
