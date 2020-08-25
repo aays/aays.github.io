@@ -17,7 +17,7 @@
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</guid>
-      <description>I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
+      <description>I&amp;rsquo;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all.</description>
     </item>
     

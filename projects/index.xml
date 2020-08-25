@@ -35,7 +35,7 @@
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/projects/rcourse/</guid>
-      <description>During the Fall 2018 and Fall 2019 semesters, I was part of the instructor team for a third-year course on quantitative methods in R, pitched by UofT Coders and adapted from Dr. Christie Bahlai&#39;s Reproducible Quantitative Methods course. The course aims to teach undergraduate students at the third-year level or above the foundations for reproducible data analysis in R, and is taught entirely using the live-coding format used in Carpentries workshops.</description>
+      <description>During the Fall 2018 and Fall 2019 semesters, I was part of the instructor team for a third-year course on quantitative methods in R, pitched by UofT Coders and adapted from Dr. Christie Bahlai&amp;rsquo;s Reproducible Quantitative Methods course. The course aims to teach undergraduate students at the third-year level or above the foundations for reproducible data analysis in R, and is taught entirely using the live-coding format used in Carpentries workshops.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/projects/hyde-hyde/</guid>
-      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&#39;s Hyde and its variant Nate Finch&#39;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&#39;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
+      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&amp;rsquo;s Hyde and its variant Nate Finch&amp;rsquo;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&amp;rsquo;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
     </item>
     
     <item>

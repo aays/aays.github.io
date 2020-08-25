@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -22,11 +22,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating an Overleaf project to GitHub"/>
-<meta name="twitter:description" content="I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
+<meta name="twitter:description" content="I&rsquo;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all."/>
 
 <meta property="og:title" content="Migrating an Overleaf project to GitHub" />
-<meta property="og:description" content="I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
+<meta property="og:description" content="I&rsquo;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aays.github.io/post/migrating-an-overleaf-project-to-github/" />
@@ -46,7 +46,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.a17de071e8d7044ba4a7c68c5d477ef2f08f8556adfbde1a18d04ead791584ac.css" integrity="sha256-oX3gcejXBEukp8aMXUd&#43;8vCPhVat&#43;94aGNBOrXkVhKw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.4e02f3d31db978c29e43cbdee3af32ed98d01bfbdf98034eee6f1408857c85bf.css" integrity="sha256-TgLz0x25eMKeQ8ve468y7ZjQG/vfmANO7m8UCIV8hb8=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -54,7 +54,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
 
 
 
-<link rel="stylesheet" href="/scss/tocbot.126e7d75240acc946d34d6ccb2982ed4c394a5fe34e73e1a2119ca951bcf119d.css" integrity="sha256-Em59dSQKzJRtNNbMspgu1MOUpf405z4aIRnKlRvPEZ0=">
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
 
 
 
@@ -271,9 +271,9 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 </script>
 
     
-    <p>I've been a big proponent of <a href="www.overleaf.com">Overleaf</a> for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.</p>
+    <p>I&rsquo;ve been a big proponent of <a href="www.overleaf.com">Overleaf</a> for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.</p>
 <p>After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all. Why? Partially in the spirit of working open, and making my TeX and R code available to anyone who cares to use it &ndash; and partially just to immortalize that mini-project within its own repo.</p>
-<p>Turns out Overleaf makes this even easier than I'd expected it to be. My naive assumption was that I'd have to download the files from the Overleaf project and manually put together a GitHub repo, but a few shell commands and tinkering on GitHub is all it takes!</p>
+<p>Turns out Overleaf makes this even easier than I&rsquo;d expected it to be. My naive assumption was that I&rsquo;d have to download the files from the Overleaf project and manually put together a GitHub repo, but a few shell commands and tinkering on GitHub is all it takes!</p>
 <p>The key here is that each Overleaf project <em>is itself a git repo</em>. Thus, in order to &lsquo;export&rsquo; it to GitHub, the key is to:</p>
 <ol>
 <li>Create a GitHub repo</li>
@@ -293,7 +293,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>The Overleaf project will be cloned into a new folder within your current directory. The name seems to be a mishmash of characters, unfortunately - it may be worth renaming it to something more informative using <code>mv</code>.</p>
 </li>
 <li>
-<p>Have a look at your remotes with <code>git remote -v</code>. You'll notice the two links are both to <code>git.overleaf.com</code> - these remotes link to the Overleaf project. We can rename these from <code>origin</code> to <code>overleaf</code> like so:</p>
+<p>Have a look at your remotes with <code>git remote -v</code>. You&rsquo;ll notice the two links are both to <code>git.overleaf.com</code> - these remotes link to the Overleaf project. We can rename these from <code>origin</code> to <code>overleaf</code> like so:</p>
 </li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote rename origin overleaf
@@ -302,7 +302,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>Open up GitHub and create a new repo. Make sure you do <em>not</em> initialize your repo with either a README.md file or a .gitignore.</p>
 </li>
 <li>
-<p>Copy your new repo's HTTPS link from the top of the newly displayed page to your clipboard.</p>
+<p>Copy your new repo&rsquo;s HTTPS link from the top of the newly displayed page to your clipboard.</p>
 </li>
 <li>
 <p>Add this as a new remote like so:</p>
@@ -360,6 +360,24 @@ git push -u origin master
 <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["r, python, bash"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
 
 
 

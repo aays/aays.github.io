@@ -45,7 +45,7 @@ Will probably put together a blog post detailing how I made this work if I get t
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/projects/rcourse/</guid>
-      <description>During the Fall 2018 and Fall 2019 semesters, I was part of the instructor team for a third-year course on quantitative methods in R, pitched by UofT Coders and adapted from Dr. Christie Bahlai&#39;s Reproducible Quantitative Methods course. The course aims to teach undergraduate students at the third-year level or above the foundations for reproducible data analysis in R, and is taught entirely using the live-coding format used in Carpentries workshops.</description>
+      <description>During the Fall 2018 and Fall 2019 semesters, I was part of the instructor team for a third-year course on quantitative methods in R, pitched by UofT Coders and adapted from Dr. Christie Bahlai&amp;rsquo;s Reproducible Quantitative Methods course. The course aims to teach undergraduate students at the third-year level or above the foundations for reproducible data analysis in R, and is taught entirely using the live-coding format used in Carpentries workshops.</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ Will probably put together a blog post detailing how I made this work if I get t
       
       <guid>https://aays.github.io/post/ld-paper/</guid>
       <description>In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) manuscript to the preprint server BioRxiv. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &amp;ndash; such is the power of preprint servers!
-Like in most endeavours in science, however, there&#39;s always room for improvement, and I&#39;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large.</description>
+Like in most endeavours in science, however, there&amp;rsquo;s always room for improvement, and I&amp;rsquo;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Like in most endeavours in science, however, there&#39;s always room for improve
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</guid>
-      <description>I&#39;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
+      <description>I&amp;rsquo;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &amp;ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all.</description>
     </item>
     
@@ -83,7 +83,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/projects/hyde-hyde/</guid>
-      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&#39;s Hyde and its variant Nate Finch&#39;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&#39;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
+      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&amp;rsquo;s Hyde and its variant Nate Finch&amp;rsquo;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&amp;rsquo;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
       <guid>https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/</guid>
       <description>A simple function to automatically append info about deleted files to a cleanup log!
 Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
-Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&#39;s being deleted when and where. Here&#39;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence.</description>
+Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&amp;rsquo;s being deleted when and where. Here&amp;rsquo;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence.</description>
     </item>
     
     <item>
