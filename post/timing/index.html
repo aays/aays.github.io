@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.74.3" />
+
+    
+    
+    
+
+<title>Timing your code - a small tip that goes a long way • Ahmed Hasan</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Timing your code - a small tip that goes a long way"/>
+<meta name="twitter:description" content="Got a second?
+There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology need to get familiar with, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
+I’m of course referring to timing the programs you run and scripts you write, which on the surface might sound like a ton of extra work for little benefit."/>
+
+<meta property="og:title" content="Timing your code - a small tip that goes a long way" />
+<meta property="og:description" content="Got a second?
+There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology need to get familiar with, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
+I’m of course referring to timing the programs you run and scripts you write, which on the surface might sound like a ton of extra work for little benefit." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aays.github.io/post/timing/" />
+<meta property="article:published_time" content="2021-06-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-25T16:00:14-04:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.4e02f3d31db978c29e43cbdee3af32ed98d01bfbdf98034eee6f1408857c85bf.css" integrity="sha256-TgLz0x25eMKeQ8ve468y7ZjQG/vfmANO7m8UCIV8hb8=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://aays.github.io/">Ahmed Hasan</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://aays.github.io/img/profile.jpeg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Ahmed Hasan</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/post/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/projects/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vitae/">
+						<span>CV</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/ahmedrhasan" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/aays" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:ahmed.hasan@mail.utoronto.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Timing your code - a small tip that goes a long way</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 25, 2021
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
+          
+      
+    
+    
+    <br/>
+    
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Contents</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    
+      <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    
+<script src="index_files/header-attrs/header-attrs.js"></script>
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<p><strong>Got a second?</strong></p>
+<p>There’s a frankly daunting amount of tools and practices most new
+researchers in genomics and computational biology need to get
+familiar with, and in some ways I am loath to add to the pile, but
+I maintain this one is particularly worth your time (heh).</p>
+<p>I’m of course referring to <strong>timing the programs you run and scripts you
+write</strong>, which on the surface might sound like a ton of extra work for little
+benefit. But as it turns out, timing the vast majority of our code/programs is
+actually quite straightforward, and can go a long way in everything from
+debugging to just planning your work over the next day.</p>
+<div id="why-time" class="section level2">
+<h2>Why time?</h2>
+<p>To some extent, even newcomers to genomics are probably somewhat
+familiar with this concept - when going through one’s first variant
+calling workflow, for instance, there’s likely an implicit understanding
+that each individual step will take time, just based off of how
+large the filesizes of FASTQ and BAM files tend to be.</p>
+<p>That said, there are a few reasons to actually explicitly get these runtimes,
+whether it’s when one is running pre-existing programs at the command line or
+when the situation calls for a few custom Python scripts. Here’s a few reasons
+to start with:</p>
+<div id="assessing-code-efficiency" class="section level3">
+<h3>Assessing code efficiency</h3>
+<p>This is a bit of an obvious one, but is still worth mentioning. To motivate
+the concept, let’s picture this: you have a script that draws some large amount
+of values over several iterations. In this instance, having your code also
+report the amount of time each iteration takes can be very informative.</p>
+<p>For instance, if you find that each subsequent iteration is taking longer
+than the last, perhaps that could tip you off to the fact that, say, your
+code is holding values from previous iterations in memory even after they’re
+done - to which the solution would be to write the values from a single
+replicate to file soon as it’s done, before starting fresh for the next.</p>
+<p>Moreover, timing can help plan your code somewhat if the number of iterations is
+user-determined (e.g. if simulating values of some sort) - by running a few test
+iterations and timing them, you can assess what amount if feasible to do given
+your timeframe.</p>
+<p>Finally, timing code can help tip you off to when something is better off
+parallelized in some way. Perhaps something is projected to take about 10 hours
+per sample - in this instance, perhaps it’s worth putting in the time to
+refactor code so that it only works on one sample at a time, and then using
+something like GNU <code>parallel</code> to run the same code over multiple samples at
+once. It might take a bit more time at first, but the potential time savings
+offered by this addition can be massive - and even if you don’t opt to do
+that, just having that information can help you plan around the expected
+runtime in other ways.</p>
+<p>And speaking of planning…</p>
+</div>
+<div id="planning-your-day" class="section level3">
+<h3>Planning your day</h3>
+<p>This one is a little less obvious unless you’ve thought about it a bit, but
+timing everything you run can help you plan your day as a whole, as you get
+a better and better sense of how long specific tasks will take. If you know
+that a program will be running for the next 20 hours (e.g. HaplotypeCaller),
+that’s something that can be queued up first thing in the morning before you
+safely put that task on hold and move on to other things<sup>1</sup>.
+Alternatively, if something is expected run in a minute, then you’re likely safe
+to assume you’ll be able to perhaps move on to whatever the next task for that
+project is in the same day.</p>
+<p>Most importantly, this helps you identify the ‘purgatory’ scripts/programs - the
+ones that take just too long to be considered trivial, but not long enough that
+you can start another involved task while they run. These are then usually best
+either run while heading off for a break or clearing out some side tasks, like
+an email that’s been on your head for a bit but actually won’t take all that
+long to get out the way.</p>
+<p>In short, knowing how long various tasks are expected to take lets you structure
+your day a bit better, and means you’re either able to get more done if needed
+or take more time off while the computer continues doing your hard work for you.</p>
+<p><sup>1</sup> Yes, I am only writing this blog post because I have a HaplotypeCaller
+run going that’ll keep on keeping on for another 3-4 hours.</p>
+</div>
+<div id="catching-unexpected-behaviour-early" class="section level3">
+<h3>Catching unexpected behaviour early</h3>
+<p>A bit more of a niche case, but sometimes a task that takes some known amount of
+time ends much sooner than expected without necessarily raising an error. I’ve
+found keeping an eye out for this has sometimes helped me debug code or catch
+bad assumptions in a script whenever it happens - in some cases, I’ve even put
+in an explicit catch where certain scripts that are expected to take a while
+when running over multiple files raise a warning if they completes too quickly.</p>
+</div>
+</div>
+<div id="how-do-i-time-my-code" class="section level2">
+<h2>How do I time my code?</h2>
+<div id="in-the-unix-shell" class="section level3">
+<h3>In the Unix shell</h3>
+<p>Timing Unix commands is probably the easiest of all, thanks to the built-in
+<code>time</code> utility. Prepend virtually any Unix command with <code>time</code>, whether
+it’s a simple oneliner or a massive GATK command, and the shell
+will dutifully report three time values:</p>
+<pre class="bash"><code>time sleep 3</code></pre>
+<pre><code>## 
+## real 0m3.003s
+## user 0m0.001s
+## sys  0m0.002s</code></pre>
+<p>If writing loops, <code>time</code> can be used multiple times for per-iteration
+reports:</p>
+<pre class="bash"><code>time for i in {1..3}; do
+  time sleep 3;
+done</code></pre>
+<pre><code>## 
+## real 0m3.005s
+## user 0m0.001s
+## sys  0m0.001s
+## 
+## real 0m3.008s
+## user 0m0.001s
+## sys  0m0.002s
+## 
+## real 0m3.007s
+## user 0m0.001s
+## sys  0m0.002s
+## 
+## real 0m9.020s
+## user 0m0.003s
+## sys  0m0.005s</code></pre>
+<p>We see the output of <code>time</code> four times here - the first three from the
+inner part of the loop (<code>time sleep 3</code>) and the fourth representing
+the entire loop itself (<code>time for i...</code>).</p>
+<p>Of the three numbers, <code>real</code> is probably the one you’ll want to refer to most -
+this value is just the ‘actual’ amount of time elapsed. <code>user</code> and <code>sys</code>
+represent CPU time instead, which is <em>usually</em> less relevant for many of us who
+are not involved in more intense development on a day-to-day basis but is still
+worth learning about, especially if you’re running things in parallel (see
+<a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">here</a> for more info).</p>
+</div>
+<div id="in-python" class="section level3">
+<h3>In Python</h3>
+<p>There are a few ways to time code in Python, with perhaps the <code>timeit</code> module
+being the most widely used from what I’ve seen. That said, I’d personally put
+forward <a href="https://pypi.org/project/tqdm/"><code>tqdm</code></a> as being a perfect all-in-one toolkit for those of us who
+specifically use Python to work with large data files like BAMs and VCFs.</p>
+<p>First things first - if you’re looking to time an <em>entire</em> script, then I’d just
+run the script at the command line with the <code>time</code> utility above. What <code>tqdm</code>
+offers, however, is the ability to generate clean progress bars out of <em>any
+iterable</em> (i.e. object that can be looped over) <em>within Python</em>. These progress
+bars also display an iteration counter, time information, and a real time report
+of average iterations per second (or seconds per iteration if the operation is
+quite involved - <code>tqdm</code> is good about switching to that if needed).</p>
+<p>It’s really a phenomenal all-in-one toolkit that lets you assess how fast a loop
+is running and when it is expected to complete based on the average time per
+iteration - all updated in real time, unlike the single value reported by <code>time</code>
+above. By also reporting an iteration counter, it’s also incredibly useful for
+debugging (if your script specifically breaks on the third iteration each time,
+that can be helpful information moving forward)</p>
+<p><code>tqdm</code> really needs to be seen in action for the full effect, but fortunately
+for us, there’s a nice GIF on the <a href="https://pypi.org/project/tqdm/">package’s PyPI page</a> that shows just
+that, reproduced here:</p>
+<p><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/63492b84f16cae9d30cad05a38ce70433decf494/68747470733a2f2f696d672e7471646d2e6d6c2f7471646d2e676966" alt="tqdm gif"></p>
+<p>In short - wrap anything you’re looping over with <code>tqdm</code> and watch the magic happen:</p>
+<pre class="python"><code>for i in tqdm(my_iterable):
+    # insert loop code here! </code></pre>
+</div>
+<div id="in-r" class="section level3">
+<h3>In R</h3>
+<p>I’ll start by confessing I don’t time most of the work I do in R, specifically
+because all my ‘heavy-duty’ programming happens in Python. More often than not,
+the only things I’m ever loading into RStudio are neat, tidy datasets I’ve
+generated elsewhere and which take little processing time/power.</p>
+<p>Still, R has a few neat options for the task, and while I haven’t quite found
+something at the level of <code>tqdm</code> it seems the <a href="https://cran.r-project.org/web/packages/tictoc/index.html"><code>tictoc</code></a> package is a
+good starting point. To use <code>tictoc</code>, add <code>tic()</code> where you’d like to start a
+timer, and <code>toc()</code> when you want the timer to stop and report the time elapsed,
+like so:</p>
+<pre class="r"><code>library(tictoc)
+tic()
+Sys.sleep(3)
+toc()</code></pre>
+<pre><code>## 3.008 sec elapsed</code></pre>
+<p><code>tics</code> and <code>tocs</code> can also be nested if needed, and given ‘names’ no less:</p>
+<pre class="r"><code>library(tictoc)
+tic(&#39;outer timer&#39;)
+tic(&#39;inner timer&#39;)
+Sys.sleep(3)
+toc(log = TRUE) # closes inner timer</code></pre>
+<pre><code>## inner timer: 3.007 sec elapsed</code></pre>
+<pre class="r"><code>Sys.sleep(3)
+toc(log = TRUE) # closes outer timer</code></pre>
+<pre><code>## outer timer: 6.013 sec elapsed</code></pre>
+<p>I suppose I’m not completely surprised that there isn’t a full on <code>tqdm</code> equivalent
+just yet given all the functional programming options available in R, but <code>tictoc</code>
+still seems very useful and flexible for those doing ‘heavier’ computation in R.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>On the surface, the concept of timing code and command line programs seems
+fairly involved, but we’ve now seen how it boils down to just inserting certain
+utilities that do the hard work for us: whether that’s <code>time</code>, <code>tqdm</code>, or
+<code>tic()</code> and <code>toc()</code>.</p>
+<p>At this point, using timing utilities is something I just do on principle
+wherever possible without really thinking too much about it, and I never find
+myself regretting it - either I see a nice progress bar do its thing, for
+instance, or I find myself with a bunch of potentially useful information if a
+script breaks. I maintain that timing is one of the easier habits to pick up,
+and I can’t recommend it enough for day-to-day computational work.</p>
+</div>
+
+    <script>
+    
+    
+      var tags = document.getElementsByTagName("h2");
+      for (var i=0, h2; h2 = tags[i]; i++) {
+        h2.id = h2.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h3");
+      for (var i=0, h3; h3 = tags[i]; i++) {
+        h3.id = h3.innerHTML.toLowerCase().replace(" ", "-");
+      }
+      var tags = document.getElementsByTagName("h4");
+      for (var i=0, h4; h4 = tags[i]; i++) {
+        h4.id = h4.innerHTML.toLowerCase().replace(" ", "-");
+      }
+    </script>
+  </div>
+  
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
