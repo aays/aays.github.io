@@ -39,6 +39,9 @@ I’m of course referring to timing the programs you run and scripts you write, 
     
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
 
 
 
@@ -370,9 +373,9 @@ it’s a simple oneliner or a massive GATK command, and the shell
 will dutifully report three time values:</p>
 <pre class="bash"><code>time sleep 3</code></pre>
 <pre><code>## 
-## real 0m3.010s
+## real 0m3.006s
 ## user 0m0.001s
-## sys  0m0.003s</code></pre>
+## sys  0m0.001s</code></pre>
 <p>If writing loops, <code>time</code> can be used multiple times for per-iteration
 reports:</p>
 <pre class="bash"><code>time for i in {1..3}; do
@@ -383,17 +386,17 @@ done</code></pre>
 ## user 0m0.001s
 ## sys  0m0.001s
 ## 
-## real 0m3.011s
-## user 0m0.002s
-## sys  0m0.004s
-## 
-## real 0m3.006s
-## user 0m0.002s
+## real 0m3.004s
+## user 0m0.001s
 ## sys  0m0.003s
 ## 
-## real 0m9.022s
-## user 0m0.004s
-## sys  0m0.009s</code></pre>
+## real 0m3.008s
+## user 0m0.001s
+## sys  0m0.002s
+## 
+## real 0m9.018s
+## user 0m0.003s
+## sys  0m0.006s</code></pre>
 <p>We see the output of <code>time</code> four times here - the first three from the
 inner part of the loop (<code>time sleep 3</code>) and the fourth representing
 the entire loop itself (<code>time for i...</code>).</p>
@@ -446,17 +449,17 @@ like so:</p>
 tic()
 Sys.sleep(3)
 toc()</code></pre>
-<pre><code>## 3.008 sec elapsed</code></pre>
+<pre><code>## 3.003 sec elapsed</code></pre>
 <p><code>tics</code> and <code>tocs</code> can also be nested if needed, and given ‘names’ no less:</p>
 <pre class="r"><code>library(tictoc)
 tic(&#39;outer timer&#39;)
 tic(&#39;inner timer&#39;)
 Sys.sleep(3)
 toc(log = TRUE) # closes inner timer</code></pre>
-<pre><code>## inner timer: 3.007 sec elapsed</code></pre>
+<pre><code>## inner timer: 3.01 sec elapsed</code></pre>
 <pre class="r"><code>Sys.sleep(3)
 toc(log = TRUE) # closes outer timer</code></pre>
-<pre><code>## outer timer: 6.015 sec elapsed</code></pre>
+<pre><code>## outer timer: 6.02 sec elapsed</code></pre>
 <p>I suppose I’m not completely surprised that there isn’t a full on <code>tqdm</code> equivalent
 just yet given all the functional programming options available in R, but <code>tictoc</code>
 still seems very useful and flexible for those doing ‘heavier’ computation in R.</p>
@@ -511,6 +514,25 @@ and I can’t recommend it enough for day-to-day computational work.</p>
 
 <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["r, python, bash"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
 
 
 
