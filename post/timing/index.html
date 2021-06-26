@@ -296,10 +296,27 @@ code is holding values from previous iterations in memory even after they’re
 done - to which the solution would be to write the values from a single
 replicate to file soon as it’s done, before starting fresh for the next.</p>
 <p>Moreover, timing can help plan your code somewhat if the number of iterations is
-user-determined (e.g. if simulating values of some sort) - by running a few test
-iterations and timing them, you can assess what amount if feasible to do given
-your timeframe.</p>
-<p>Finally, timing code can help tip you off to when something is better off
+user-determined (e.g. if simulating values of some sort). By running a few test
+iterations and timing them, you can assess what amount is feasible to do given
+your timeframe, if time is the main limiting factor at hand.</p>
+<p>Sneakier timing issues can also be more quickly found with this method.
+Alternatively, let’s say you’re going through a large file in Python and
+picking out bits of information from each line, but your code starts with a
+check to exclude header lines:</p>
+<pre class="python"><code>with open(input_file, &#39;r&#39;) as f:
+    for line in f:
+        if line.startswith(&#39;#header&#39;):
+            continue
+        else:
+            do_things(line)</code></pre>
+<p>If there were a way to time this code, you might find that this gets a lot
+faster without the <code>if</code> block up top. That check is only true once, but it’s
+checked against every single line in your file! In this instance, if you were to
+try to change your approach in some way (e.g. using tabix if the file is
+compatible), timing both this and the alternative over just a few iterations
+could relatively quickly show you which is the faster option and save you a good
+bit of time.</p>
+<p>Finally, timing code can help you figure out when something is better off
 parallelized in some way. Perhaps something is projected to take about 10 hours
 per sample - in this instance, perhaps it’s worth putting in the time to
 refactor code so that it only works on one sample at a time, and then using
@@ -313,14 +330,14 @@ runtime in other ways.</p>
 <div id="planning-your-day" class="section level3">
 <h3>Planning your day</h3>
 <p>This one is a little less obvious unless you’ve thought about it a bit, but
-timing everything you run can help you plan your day as a whole, as you get
-a better and better sense of how long specific tasks will take. If you know
+timing everything you run can help you plan your day as a whole, since you’ll
+get a better and better sense of how long specific tasks will take. If you know
 that a program will be running for the next 20 hours (e.g. HaplotypeCaller),
 that’s something that can be queued up first thing in the morning before you
 safely put that task on hold and move on to other things<sup>1</sup>.
-Alternatively, if something is expected run in a minute, then you’re likely safe
-to assume you’ll be able to perhaps move on to whatever the next task for that
-project is in the same day.</p>
+Alternatively, if something is expected run in a minute flat, then you’re likely
+safe to assume you’ll be able to perhaps move on to whatever the next task for
+that project is in the same day.</p>
 <p>Most importantly, this helps you identify the ‘purgatory’ scripts/programs - the
 ones that take just too long to be considered trivial, but not long enough that
 you can start another involved task while they run. These are then usually best
@@ -353,9 +370,9 @@ it’s a simple oneliner or a massive GATK command, and the shell
 will dutifully report three time values:</p>
 <pre class="bash"><code>time sleep 3</code></pre>
 <pre><code>## 
-## real 0m3.003s
+## real 0m3.010s
 ## user 0m0.001s
-## sys  0m0.002s</code></pre>
+## sys  0m0.003s</code></pre>
 <p>If writing loops, <code>time</code> can be used multiple times for per-iteration
 reports:</p>
 <pre class="bash"><code>time for i in {1..3}; do
@@ -366,17 +383,17 @@ done</code></pre>
 ## user 0m0.001s
 ## sys  0m0.001s
 ## 
-## real 0m3.008s
-## user 0m0.001s
-## sys  0m0.002s
+## real 0m3.011s
+## user 0m0.002s
+## sys  0m0.004s
 ## 
-## real 0m3.007s
-## user 0m0.001s
-## sys  0m0.002s
+## real 0m3.006s
+## user 0m0.002s
+## sys  0m0.003s
 ## 
-## real 0m9.020s
-## user 0m0.003s
-## sys  0m0.005s</code></pre>
+## real 0m9.022s
+## user 0m0.004s
+## sys  0m0.009s</code></pre>
 <p>We see the output of <code>time</code> four times here - the first three from the
 inner part of the loop (<code>time sleep 3</code>) and the fourth representing
 the entire loop itself (<code>time for i...</code>).</p>
@@ -439,7 +456,7 @@ toc(log = TRUE) # closes inner timer</code></pre>
 <pre><code>## inner timer: 3.007 sec elapsed</code></pre>
 <pre class="r"><code>Sys.sleep(3)
 toc(log = TRUE) # closes outer timer</code></pre>
-<pre><code>## outer timer: 6.013 sec elapsed</code></pre>
+<pre><code>## outer timer: 6.015 sec elapsed</code></pre>
 <p>I suppose I’m not completely surprised that there isn’t a full on <code>tqdm</code> equivalent
 just yet given all the functional programming options available in R, but <code>tictoc</code>
 still seems very useful and flexible for those doing ‘heavier’ computation in R.</p>
