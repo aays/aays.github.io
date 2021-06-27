@@ -17,18 +17,18 @@
     
     
 
-<title>Timing your code - a small tip that goes a long way • Ahmed Hasan</title>
+<title>How and why to time your code - a quick primer • Ahmed Hasan</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Timing your code - a small tip that goes a long way"/>
+<meta name="twitter:title" content="How and why to time your code - a quick primer"/>
 <meta name="twitter:description" content="Got a second?
-There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology need to get familiar with, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
+There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology could could get some serious mileage out of, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
 I’m of course referring to timing the programs you run and scripts you write, which on the surface might sound like a ton of extra work for little benefit."/>
 
-<meta property="og:title" content="Timing your code - a small tip that goes a long way" />
+<meta property="og:title" content="How and why to time your code - a quick primer" />
 <meta property="og:description" content="Got a second?
-There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology need to get familiar with, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
+There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology could could get some serious mileage out of, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
 I’m of course referring to timing the programs you run and scripts you write, which on the surface might sound like a ton of extra work for little benefit." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aays.github.io/post/timing/" />
@@ -188,7 +188,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
     
 <article>
   <header>
-    <h1>Timing your code - a small tip that goes a long way</h1>
+    <h1>How and why to time your code - a quick primer</h1>
     
     
 <div class="post__meta">
@@ -267,10 +267,10 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 
 
 <p><strong>Got a second?</strong></p>
-<p>There’s a frankly daunting amount of tools and practices most new
-researchers in genomics and computational biology need to get
-familiar with, and in some ways I am loath to add to the pile, but
-I maintain this one is particularly worth your time (heh).</p>
+<p>There’s a frankly daunting amount of tools and practices most new researchers in
+genomics and computational biology could could get some serious mileage out of,
+and in some ways I am loath to add to the pile, but I maintain this one is
+particularly worth your time (heh).</p>
 <p>I’m of course referring to <strong>timing the programs you run and scripts you
 write</strong>, which on the surface might sound like a ton of extra work for little
 benefit. But as it turns out, timing the vast majority of our code/programs is
@@ -278,89 +278,104 @@ actually quite straightforward, and can go a long way in everything from
 debugging to just planning your work over the next day.</p>
 <div id="why-time" class="section level2">
 <h2>Why time?</h2>
-<p>To some extent, even newcomers to genomics are probably somewhat
-familiar with this concept - when going through one’s first variant
-calling workflow, for instance, there’s likely an implicit understanding
-that each individual step will take time, just based off of how
-large the filesizes of FASTQ and BAM files tend to be.</p>
+<p>To some extent, even newcomers to genomics are probably somewhat familiar with
+this concept - when going through a variant calling workflow for the first time,
+for instance, there’s likely an implicit understanding that each individual step
+will take time, just based off of how large the filesizes of FASTQ and BAM files
+tend to be.</p>
 <p>That said, there are a few reasons to actually explicitly get these runtimes,
 whether it’s when one is running pre-existing programs at the command line or
 when the situation calls for a few custom Python scripts. Here’s a few reasons
 to start with:</p>
 <div id="assessing-code-efficiency" class="section level3">
-<h3>Assessing code efficiency</h3>
-<p>This is a bit of an obvious one, but is still worth mentioning. To motivate
-the concept, let’s picture this: you have a script that draws some large amount
-of values over several iterations. In this instance, having your code also
-report the amount of time each iteration takes can be very informative.</p>
-<p>For instance, if you find that each subsequent iteration is taking longer
-than the last, perhaps that could tip you off to the fact that, say, your
-code is holding values from previous iterations in memory even after they’re
-done - to which the solution would be to write the values from a single
-replicate to file soon as it’s done, before starting fresh for the next.</p>
-<p>Moreover, timing can help plan your code somewhat if the number of iterations is
-user-determined (e.g. if simulating values of some sort). By running a few test
-iterations and timing them, you can assess what amount is feasible to do given
-your timeframe, if time is the main limiting factor at hand.</p>
-<p>Sneakier timing issues can also be more quickly found with this method.
-Alternatively, let’s say you’re going through a large file in Python and
-picking out bits of information from each line, but your code starts with a
-check to exclude header lines:</p>
+<h3>1. Assessing code efficiency</h3>
+<p>This seems a bit of an obvious reason, but is still worth mentioning and
+expanding on. To motivate the concept, let’s picture this: you have a script
+that draws some large amount of values over several iterations. In this
+instance, having your code also report the amount of time each iteration takes
+can be quite informative.</p>
+<p>To begin with, let’s say you find that each subsequent iteration is taking
+longer than the last. That seems suboptimal! Perhaps that could tip you off to
+the fact that, say, your code is holding values from previous iterations in
+memory even after they’re done - to which one solution could be to write the
+values from a single replicate to file soon as it’s done, before starting fresh
+for the next. Moreover, timing can help plan your code somewhat if the number of
+iterations is user-determined (e.g. if simulating values of some sort). By
+running a few test iterations and timing them, you can assess what amount is
+feasible to do given your timeframe, if time is the main limiting factor at
+hand.</p>
+<p>Sneakier timing issues can also be more quickly found with this method. Many of
+us who spend more time processing genomic data than developing tools haven’t
+received formal training in concepts like memory management or big O notation -
+but memory-inefficient code turning what seems like simple tasks into
+slow-running slogs affects us all the same. Let’s say you’re going through a
+large file in Python and picking out bits of information from each line, but
+your code starts with a few checks to exclude header/metadata lines:</p>
 <pre class="python"><code>with open(input_file, &#39;r&#39;) as f:
     for line in f:
         if line.startswith(&#39;#header&#39;):
             continue
+        elif line.startswith(&#39;&lt;meta=&#39;):
+            continue
         else:
             do_things(line)</code></pre>
-<p>If there were a way to time this code, you might find that this gets a lot
-faster without the <code>if</code> block up top. That check is only true once, but it’s
-checked against every single line in your file! In this instance, if you were to
-try to change your approach in some way (e.g. using tabix if the file is
-compatible), timing both this and the alternative over just a few iterations
-could relatively quickly show you which is the faster option and save you a good
-bit of time.</p>
+<p>Let’s also say you also expect <code>input_file</code> to be a file millions and millions
+of lines long. This is a situation where saving even milliseconds per line can
+go a long way, and as it turns out, the <code>if</code> blocks are actually going to slow
+this loop a fair bit in the long run. This is because checks like these are only
+true at the start of the file - but they’re still checked against every single
+one of the millions of lines after the header! With this in mind, perhaps you
+could look into and time alternative approaches (e.g. tabix, the <code>csv</code> module,
+etc.) over snippets of the same file. No matter what alternative(s) you settle
+on, timing both this and the other methods over just a few iterations could
+relatively quickly show you which is the faster option - not only saving you a
+good bit of runtime when all is settled, but also informing future approaches to
+the same problem.</p>
 <p>Finally, timing code can help you figure out when something is better off
-parallelized in some way. Perhaps something is projected to take about 10 hours
-per sample - in this instance, perhaps it’s worth putting in the time to
-refactor code so that it only works on one sample at a time, and then using
-something like GNU <code>parallel</code> to run the same code over multiple samples at
-once. It might take a bit more time at first, but the potential time savings
-offered by this addition can be massive - and even if you don’t opt to do
-that, just having that information can help you plan around the expected
-runtime in other ways.</p>
+parallelized in some way. Perhaps you know something is projected to take about
+10 hours per sample, and you’ve got a ton of different samples on your hands -
+in this case, perhaps it’s worth putting in the time to refactor code so that it
+only works on one sample at a time, and then using something like GNU <code>parallel</code>
+to run the same script over multiple samples at once. It might take a bit more
+development time at first, but the potential time savings offered by this
+addition can be massive. Plus, even if you don’t opt to go the <code>parallel</code> route,
+just having that information can help you plan around the expected runtime in
+other ways.</p>
 <p>And speaking of planning…</p>
 </div>
 <div id="planning-your-day" class="section level3">
-<h3>Planning your day</h3>
+<h3>2. Planning your day</h3>
 <p>This one is a little less obvious unless you’ve thought about it a bit, but
 timing everything you run can help you plan your day as a whole, since you’ll
 get a better and better sense of how long specific tasks will take. If you know
 that a program will be running for the next 20 hours (e.g. HaplotypeCaller),
 that’s something that can be queued up first thing in the morning before you
 safely put that task on hold and move on to other things<sup>1</sup>.
-Alternatively, if something is expected run in a minute flat, then you’re likely
-safe to assume you’ll be able to perhaps move on to whatever the next task for
-that project is in the same day.</p>
+Alternatively, if something is expected to run in a minute flat, then you’re
+likely safe to assume you’ll be able to perhaps move on to whatever the next
+task for that project is in the same day.</p>
 <p>Most importantly, this helps you identify the ‘purgatory’ scripts/programs - the
 ones that take just too long to be considered trivial, but not long enough that
 you can start another involved task while they run. These are then usually best
-either run while heading off for a break or clearing out some side tasks, like
+run either while heading off for a break or clearing out some side tasks, like
 an email that’s been on your head for a bit but actually won’t take all that
 long to get out the way.</p>
 <p>In short, knowing how long various tasks are expected to take lets you structure
 your day a bit better, and means you’re either able to get more done if needed
-or take more time off while the computer continues doing your hard work for you.</p>
+or take more time off while the computer continues doing all that hard work for
+you.</p>
 <p><sup>1</sup> Yes, I am only writing this blog post because I have a HaplotypeCaller
 run going that’ll keep on keeping on for another 3-4 hours.</p>
 </div>
 <div id="catching-unexpected-behaviour-early" class="section level3">
-<h3>Catching unexpected behaviour early</h3>
+<h3>3. Catching unexpected behaviour early</h3>
 <p>A bit more of a niche case, but sometimes a task that takes some known amount of
-time ends much sooner than expected without necessarily raising an error. I’ve
-found keeping an eye out for this has sometimes helped me debug code or catch
-bad assumptions in a script whenever it happens - in some cases, I’ve even put
-in an explicit catch where certain scripts that are expected to take a while
-when running over multiple files raise a warning if they completes too quickly.</p>
+time ends much sooner than expected without necessarily raising an error (this
+is especially common with scripts that run shell commands for you). I’ve found
+keeping an eye out for this has sometimes helped me debug code or catch bad
+assumptions in a script whenever it happens - in some cases, I’ve even put in an
+explicit catch where certain scripts that are expected to take a while when
+running over multiple files raise a warning if they complete too quickly.</p>
 </div>
 </div>
 <div id="how-do-i-time-my-code" class="section level2">
@@ -373,30 +388,30 @@ it’s a simple oneliner or a massive GATK command, and the shell
 will dutifully report three time values:</p>
 <pre class="bash"><code>time sleep 3</code></pre>
 <pre><code>## 
-## real 0m3.006s
+## real 0m3.009s
 ## user 0m0.001s
-## sys  0m0.001s</code></pre>
+## sys  0m0.002s</code></pre>
 <p>If writing loops, <code>time</code> can be used multiple times for per-iteration
 reports:</p>
 <pre class="bash"><code>time for i in {1..3}; do
   time sleep 3;
 done</code></pre>
 <pre><code>## 
-## real 0m3.005s
+## real 0m3.007s
 ## user 0m0.001s
 ## sys  0m0.001s
 ## 
-## real 0m3.004s
-## user 0m0.001s
+## real 0m3.010s
+## user 0m0.002s
+## sys  0m0.005s
+## 
+## real 0m3.006s
+## user 0m0.002s
 ## sys  0m0.003s
 ## 
-## real 0m3.008s
-## user 0m0.001s
-## sys  0m0.002s
-## 
-## real 0m9.018s
-## user 0m0.003s
-## sys  0m0.006s</code></pre>
+## real 0m9.025s
+## user 0m0.005s
+## sys  0m0.009s</code></pre>
 <p>We see the output of <code>time</code> four times here - the first three from the
 inner part of the loop (<code>time sleep 3</code>) and the fourth representing
 the entire loop itself (<code>time for i...</code>).</p>
@@ -418,20 +433,23 @@ run the script at the command line with the <code>time</code> utility above. Wha
 offers, however, is the ability to generate clean progress bars out of <em>any
 iterable</em> (i.e. object that can be looped over) <em>within Python</em>. These progress
 bars also display an iteration counter, time information, and a real time report
-of average iterations per second (or seconds per iteration if the operation is
-quite involved - <code>tqdm</code> is good about switching to that if needed).</p>
+of average iterations per second (or seconds per iteration if the former case is
+yielding values below 1 - <code>tqdm</code> is good about switching the units around as
+needed).</p>
 <p>It’s really a phenomenal all-in-one toolkit that lets you assess how fast a loop
 is running and when it is expected to complete based on the average time per
-iteration - all updated in real time, unlike the single value reported by <code>time</code>
-above. By also reporting an iteration counter, it’s also incredibly useful for
-debugging (if your script specifically breaks on the third iteration each time,
-that can be helpful information moving forward)</p>
+iteration - all updated in real time <em>during</em> the script’s runtime, unlike the
+single post-run value reported by <code>time</code> above. By also reporting an iteration
+counter, it’s also incredibly useful for debugging (e.g. if your script
+specifically breaks on the third iteration each time, that can be helpful
+information moving forward)</p>
 <p><code>tqdm</code> really needs to be seen in action for the full effect, but fortunately
 for us, there’s a nice GIF on the <a href="https://pypi.org/project/tqdm/">package’s PyPI page</a> that shows just
 that, reproduced here:</p>
 <p><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/63492b84f16cae9d30cad05a38ce70433decf494/68747470733a2f2f696d672e7471646d2e6d6c2f7471646d2e676966" alt="tqdm gif"></p>
 <p>In short - wrap anything you’re looping over with <code>tqdm</code> and watch the magic happen:</p>
-<pre class="python"><code>for i in tqdm(my_iterable):
+<pre class="python"><code>from tqdm import tqdm
+for i in tqdm(my_iterable):
     # insert loop code here! </code></pre>
 </div>
 <div id="in-r" class="section level3">
@@ -440,29 +458,30 @@ that, reproduced here:</p>
 because all my ‘heavy-duty’ programming happens in Python. More often than not,
 the only things I’m ever loading into RStudio are neat, tidy datasets I’ve
 generated elsewhere and which take little processing time/power.</p>
-<p>Still, R has a few neat options for the task, and while I haven’t quite found
-something at the level of <code>tqdm</code> it seems the <a href="https://cran.r-project.org/web/packages/tictoc/index.html"><code>tictoc</code></a> package is a
-good starting point. To use <code>tictoc</code>, add <code>tic()</code> where you’d like to start a
-timer, and <code>toc()</code> when you want the timer to stop and report the time elapsed,
-like so:</p>
+<p>Still, R has a few neat options for the task if needed, and while I haven’t
+quite found something at the level of <code>tqdm</code> it seems the <a href="https://cran.r-project.org/web/packages/tictoc/index.html"><code>tictoc</code></a>
+package is a good starting point. To use <code>tictoc</code>, add <code>tic()</code> where you’d like
+to start a timer, and <code>toc()</code> when you want the timer to stop and report the
+time elapsed, like so:</p>
 <pre class="r"><code>library(tictoc)
 tic()
 Sys.sleep(3)
 toc()</code></pre>
-<pre><code>## 3.003 sec elapsed</code></pre>
+<pre><code>## 3.005 sec elapsed</code></pre>
 <p><code>tics</code> and <code>tocs</code> can also be nested if needed, and given ‘names’ no less:</p>
 <pre class="r"><code>library(tictoc)
 tic(&#39;outer timer&#39;)
 tic(&#39;inner timer&#39;)
 Sys.sleep(3)
 toc(log = TRUE) # closes inner timer</code></pre>
-<pre><code>## inner timer: 3.01 sec elapsed</code></pre>
+<pre><code>## inner timer: 3.005 sec elapsed</code></pre>
 <pre class="r"><code>Sys.sleep(3)
 toc(log = TRUE) # closes outer timer</code></pre>
-<pre><code>## outer timer: 6.02 sec elapsed</code></pre>
-<p>I suppose I’m not completely surprised that there isn’t a full on <code>tqdm</code> equivalent
-just yet given all the functional programming options available in R, but <code>tictoc</code>
-still seems very useful and flexible for those doing ‘heavier’ computation in R.</p>
+<pre><code>## outer timer: 6.014 sec elapsed</code></pre>
+<p>I suppose I’m not completely surprised that there isn’t a full on <code>tqdm</code>
+equivalent just yet given all the functional programming options available in R,
+but <code>tictoc</code> still seems very useful and flexible for those doing ‘heavier’
+computation with the language.</p>
 </div>
 </div>
 <div id="conclusion" class="section level2">
@@ -471,12 +490,13 @@ still seems very useful and flexible for those doing ‘heavier’ computation i
 fairly involved, but we’ve now seen how it boils down to just inserting certain
 utilities that do the hard work for us: whether that’s <code>time</code>, <code>tqdm</code>, or
 <code>tic()</code> and <code>toc()</code>.</p>
-<p>At this point, using timing utilities is something I just do on principle
-wherever possible without really thinking too much about it, and I never find
-myself regretting it - either I see a nice progress bar do its thing, for
-instance, or I find myself with a bunch of potentially useful information if a
-script breaks. I maintain that timing is one of the easier habits to pick up,
-and I can’t recommend it enough for day-to-day computational work.</p>
+<p>At this point, timing my code and shell commands is something I just do on
+principle wherever possible without really thinking too much about it, and I
+never find myself regretting it - either I see a nice progress bar do its thing,
+or I find myself with a bunch of potentially useful information if a script
+breaks. In either case, I maintain that timing is one of the easier habits to
+pick up, and it’s paid dividends for me when it comes to day-to-day
+computational work.</p>
 </div>
 
     <script>

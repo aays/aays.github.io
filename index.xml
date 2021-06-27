@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Timing your code - a small tip that goes a long way</title>
+      <title>How and why to time your code - a quick primer</title>
       <link>https://aays.github.io/post/timing/</link>
       <pubDate>Fri, 25 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/post/timing/</guid>
       <description>Got a second?
-There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology need to get familiar with, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
+There’s a frankly daunting amount of tools and practices most new researchers in genomics and computational biology could could get some serious mileage out of, and in some ways I am loath to add to the pile, but I maintain this one is particularly worth your time (heh).
 I’m of course referring to timing the programs you run and scripts you write, which on the surface might sound like a ton of extra work for little benefit.</description>
     </item>
     
