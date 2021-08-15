@@ -23,18 +23,6 @@ I’m of course referring to timing the programs you run and scripts you write, 
     </item>
     
     <item>
-      <title>On teaching programming with style guides</title>
-      <link>https://aays.github.io/post/2021-01-01-style-guide/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://aays.github.io/post/2021-01-01-style-guide/</guid>
-      <description>Educators teaching programming to scientists should employ style guides.
-cold open: what I do re teaching programming. story of that one time I taught SWC and kept adding spaces around parentheses in seaborn code.
-in favour:
-style guides do exist for a reason, and it’s important to teach learners good habits  these reasons often have to do with best practices in programming (e.g. avoiding too many nested for loops) that make code more readable and easier to debug</description>
-    </item>
-    
-    <item>
       <title>Migrating to Hugo &#43; blogdown</title>
       <link>https://aays.github.io/post/migrating-to-hugo-blogdown/</link>
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
