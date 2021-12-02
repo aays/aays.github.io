@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -31,9 +31,10 @@ Anyhow - sometimes, when dealing with large amounts of intermediate files in a p
 Motivation (I originally wanted to just tweet this little trick out, but 140 characters is rarely sufficient for this sort of thing.)
 Anyhow - sometimes, when dealing with large amounts of intermediate files in a project, it can be useful to log what&rsquo;s being deleted when and where. Here&rsquo;s a quick bash trick for setting up a function that logs a) which files where deleted, b) when they were deleted, and c) how much space was freed up as a consequence." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/" />
+<meta property="og:url" content="https://aays.github.io/post/setting-up-a-simple-cleanup-log-in-bash/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-08-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-18T23:23:51-05:00" /><meta property="og:site_name" content="Title" />
+
 
 
     
@@ -283,13 +284,13 @@ consequence.</p>
 thus far!</p>
 <h3 id="method">Method</h3>
 <p>First, let&rsquo;s create a log file for our project. This is where our function will log everything we delete.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch path/to/projectdir/cleanup.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch path/to/projectdir/cleanup.log
 </code></pre></div><p>Next, we&rsquo;ll open up our <code>.bash_profile</code> in order to create our function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi ~/.bash_profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi ~/.bash_profile
 </code></pre></div><p>Here&rsquo;s the template for my function, which I call <code>rml()</code> (&lsquo;remove and log&rsquo;).
 Paste the following anywhere within the body of your <code>.bash_profile</code>. Make sure
 to use the full path to your <code>cleanup.log</code> file from the root dir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 printf <span style="color:#e6db74">&#39;\n&#39;</span> &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
 date &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
 echo $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span>
@@ -297,7 +298,7 @@ du -hcs $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="col
 rm $1
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Annotated:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 printf <span style="color:#e6db74">&#39;\n&#39;</span> &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># skip a line for readability</span>
 date &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># log the date of deletion</span>
 echo $1 &gt;&gt; <span style="color:#f92672">[</span>log file<span style="color:#f92672">]</span> <span style="color:#75715e"># the name of the file</span>
@@ -306,13 +307,13 @@ rm $1 <span style="color:#75715e"># and finally, delete it</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Feel free to customize this however you&rsquo;d like! When you&rsquo;re done, exit out of
 <code>vi</code> and make sure to <code>source</code> your <code>.bash_profile</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bash_profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bash_profile
 </code></pre></div><p>You only have to do this once, and then you&rsquo;re ready to go.</p>
 <p>From there on out, just use <code>rml</code> in place of <code>rm</code> to log a file&rsquo;s deletion. For
 instance, the following command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml projectdir/bigintermediatefile.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rml projectdir/bigintermediatefile.txt
 </code></pre></div><p>will automatically add something like this to <code>cleanup.log</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Tue Aug  <span style="color:#ae81ff">1</span> 12:09:01 EDT <span style="color:#ae81ff">2017</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Tue Aug  <span style="color:#ae81ff">1</span> 12:09:01 EDT <span style="color:#ae81ff">2017</span>
 bigintermediatefile.txt
 6.0G    bigintermediatefile.txt
 6.0G    total
