@@ -6,7 +6,11 @@
     <description>Recent content in git on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aays.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://aays.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Migrating an Overleaf project to GitHub</title>
       <link>https://aays.github.io/post/migrating-an-overleaf-project-to-github/</link>

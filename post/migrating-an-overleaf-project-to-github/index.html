@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -29,10 +29,9 @@ After returning from the conference (and recovering from a good bit of jet lag) 
 <meta property="og:description" content="I&rsquo;ve been a big proponent of Overleaf for some time now, having written both committee reports and assignments in it to great success in my grad school career thus far. Recently, I expanded my horizons a bit and made my first conference poster in LaTeX &ndash; something I admittedly found a bit head-spinning at first, but which eventually clicked just like everything else about LaTeX has in the past.
 After returning from the conference (and recovering from a good bit of jet lag) I decided I wanted to preserve the project within a GitHub repo: code, plots, and all." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aays.github.io/post/migrating-an-overleaf-project-to-github/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://aays.github.io/post/migrating-an-overleaf-project-to-github/" />
 <meta property="article:published_time" content="2018-08-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-18T23:10:16-05:00" /><meta property="og:site_name" content="Title" />
-
 
 
     
@@ -167,7 +166,7 @@ After returning from the conference (and recovering from a good bit of jet lag) 
     </div>
     
 <div class="copyright">
-  &copy; 2021 htr3n
+  &copy; 2022 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -288,7 +287,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <li>Copy the link underneath &lsquo;Clone With Git&rsquo; to your clipboard</li>
 <li>In your Terminal, run the following:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#f92672">[</span>link<span style="color:#f92672">]</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#f92672">[</span>link<span style="color:#f92672">]</span>
 </code></pre></div><ol start="4">
 <li>
 <p>The Overleaf project will be cloned into a new folder within your current directory. The name seems to be a mishmash of characters, unfortunately - it may be worth renaming it to something more informative using <code>mv</code>.</p>
@@ -297,7 +296,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>Have a look at your remotes with <code>git remote -v</code>. You&rsquo;ll notice the two links are both to <code>git.overleaf.com</code> - these remotes link to the Overleaf project. We can rename these from <code>origin</code> to <code>overleaf</code> like so:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote rename origin overleaf
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote rename origin overleaf
 </code></pre></div><ol start="6">
 <li>
 <p>Open up GitHub and create a new repo. Make sure you do <em>not</em> initialize your repo with either a README.md file or a .gitignore.</p>
@@ -309,7 +308,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>Add this as a new remote like so:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin <span style="color:#f92672">[</span>repo link<span style="color:#f92672">]</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin <span style="color:#f92672">[</span>repo link<span style="color:#f92672">]</span>
 </code></pre></div><ol start="9">
 <li>
 <p>If you run <code>git remote -v</code>, you should now see the new repo link displayed.</p>
@@ -318,9 +317,9 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>Push the contents of the project to GitHub:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push -u origin master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push -u origin master
 </code></pre></div><p>You can now sync your local copy with these two remotes separately. In my case, I added the R script I used to make my plots, but only pushed that to the GitHub repo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add plots.R
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add plots.R
 git commit -m <span style="color:#e6db74">&#39;add plot code&#39;</span>
 git push -u origin master
 </code></pre></div><p>Enjoy!</p>

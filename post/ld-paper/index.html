@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -29,10 +29,9 @@ Like in most endeavours in science, however, there&rsquo;s always room for impro
 <meta property="og:description" content="In June of this year, I uploaded my first first-author (there has to be a cleaner way of saying that) manuscript to the preprint server BioRxiv. This was a huge and important milestone for me, and I was incredibly excited to have it out for the world to see virtually as soon as it was done &ndash; such is the power of preprint servers!
 Like in most endeavours in science, however, there&rsquo;s always room for improvement, and I&rsquo;ve been very fortunate to have gotten some thorough feedback from both members of my committee as well as other researchers in the community at large." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aays.github.io/post/ld-paper/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://aays.github.io/post/ld-paper/" />
 <meta property="article:published_time" content="2018-11-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-18T23:21:34-05:00" /><meta property="og:site_name" content="Title" />
-
 
 
     
@@ -167,7 +166,7 @@ Like in most endeavours in science, however, there&rsquo;s always room for impro
     </div>
     
 <div class="copyright">
-  &copy; 2021 htr3n
+  &copy; 2022 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -303,7 +302,7 @@ Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/
 <p>Anyone who knows me knows that I&rsquo;m a bit of a data visualization buff, and spend far too much time finding ways to make plots look both prettier and more intuitive in their presentation. With this in mind, I was not particularly satisfied with the initial iteration of Figure 1, which displayed a) the distribution of recombination rates across the 17 chromosomes of <em>C. reinhardtii</em> and b) the decay of linkage disequilibrium across the genome, once again split by chromosome. Both plots were shaded by chromosome length, which was on a purple to blue scale &ndash; arguably not the most intuitive! Furthermore, the font sizes of the axis titles and labels were inconsistent, with some of the labels being harder to read.</p>
 <p>The new version of the plot features more intuitive colours (yellow to orange/red, via the <code>wesanderson</code> package in R) and larger axis tick labels, which I think make for a more easily understandable plot. However, the main reason I&rsquo;m excited about this is that this was my first use of the <code>patchwork</code> package (<a href="https://github.com/thomasp85/patchwork">obtainable here</a>) for stitching together plots in R, which works beautifully with <code>ggplot2</code> 3.0&rsquo;s new <code>labs(tag)</code> feature &ndash; both of which I haven&rsquo;t seen nearly enough fanfare about for the utility they provide.</p>
 <p>Namely, where in the past stitching together plots has required either some <code>gridExtra</code> wizardry or simply exporting to Photoshop/Illustrator/what have you, these packages allow for the entire process to be done completely in R. To create a new plot featuring two plot objects <code>p1</code> and <code>p2</code> side by side, <code>patchwork</code> allows us to simply write</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">p1 <span style="color:#f92672">+</span> p2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">p1 <span style="color:#f92672">+</span> p2
 </code></pre></div><p>and we&rsquo;re good to go. It seems so intuitive and in line with the <code>ggplot2</code> philosophy I&rsquo;m surprised it hasn&rsquo;t received even more attention.</p>
 <p>The second component of this is that the newest version of <code>ggplot2</code> features a new <code>tag</code> argument in the <code>labs</code> function (i.e. <code>labs(tag = 'A')</code>) which allows for the easy addition of tags to the top left corner of plots. Together, these constitute a very powerful toolkit for making plots of this sort all within R itself.</p>
 <p>Finally, Figure 3 has also been updated to reflect the analyses described above regarding crossover density from the Liu dataset. Code for all figures in the paper can be found <a href="https://github.com/aays/2018-ld-paper/blob/master/plots.R">here</a>.</p>
