@@ -6,10 +6,29 @@
     <description>Recent content on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Salt stress alters the spectrum of de novo mutation available to selection during experimental adaptation of Chlamydomonas reinhardtii</title>
+      <link>https://aays.github.io/projects/salt-lines/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/projects/salt-lines/</guid>
+      <description>The genetic basis of adaptation is driven not only by selection, but also by the spectrum of available mutations. Given that the rate of mutation is not uniformly distributed across the genome and varies depending on the environment, understanding the signatures of selection across the genome is aided by first establishing what the expectations of genetic change are from mutation. To determine the interaction between salt stress, selection, and mutation across the genome, we compared the rates and patterns of mutation observed in a selection experiment for salt tolerance in Chlamydomonas reinhardtii to those observed in mutation accumulation experiments with and without salt exposure.</description>
+    </item>
+    
+    <item>
+      <title>Salt stress alters the spectrum of de novo mutation in C. reinhardtii - a summary</title>
+      <link>https://aays.github.io/post/2022-04-11-salt-lines/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/post/2022-04-11-salt-lines/</guid>
+      <description>A bit of backstory So - my thesis work so far across my PhD has primarily concerned recombination: more specifically, variation in recombination rate across the genome, and how that affects genome evolution. That said, when the world came to a standstill in 2020, my next recombination-related project ground to a halt, with me unable to head into the lab at all.
+Around this time, Rob (my supervisor) pitched this project on characterizing the mutation profiles of salt-adapted lines to me.</description>
+    </item>
     
     <item>
       <title>How and why to time your code - a quick primer</title>

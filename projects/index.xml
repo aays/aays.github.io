@@ -6,10 +6,19 @@
     <description>Recent content in Projects on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Salt stress alters the spectrum of de novo mutation available to selection during experimental adaptation of Chlamydomonas reinhardtii</title>
+      <link>https://aays.github.io/projects/salt-lines/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aays.github.io/projects/salt-lines/</guid>
+      <description>The genetic basis of adaptation is driven not only by selection, but also by the spectrum of available mutations. Given that the rate of mutation is not uniformly distributed across the genome and varies depending on the environment, understanding the signatures of selection across the genome is aided by first establishing what the expectations of genetic change are from mutation. To determine the interaction between salt stress, selection, and mutation across the genome, we compared the rates and patterns of mutation observed in a selection experiment for salt tolerance in Chlamydomonas reinhardtii to those observed in mutation accumulation experiments with and without salt exposure.</description>
+    </item>
     
     <item>
       <title>Recombination rate variation and infrequent sex influence genetic diversity in C. reinhardtii</title>
