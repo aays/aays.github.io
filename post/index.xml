@@ -6,20 +6,10 @@
     <description>Recent content in Posts on Ahmed Hasan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aays.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Salt stress alters the spectrum of de novo mutation in C. reinhardtii - a summary</title>
-      <link>https://aays.github.io/post/2022-04-11-salt-lines/</link>
-      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://aays.github.io/post/2022-04-11-salt-lines/</guid>
-      <description>A bit of backstory So - my thesis work so far across my PhD has primarily concerned recombination: more specifically, variation in recombination rate across the genome, and how that affects genome evolution. That said, when the world came to a standstill in 2020, my next recombination-related project ground to a halt, with me unable to head into the lab at all.
-Around this time, Rob (my supervisor) pitched this project on characterizing the mutation profiles of salt-adapted lines to me.</description>
-    </item>
     
     <item>
       <title>How and why to time your code - a quick primer</title>
