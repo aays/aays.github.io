@@ -29,7 +29,8 @@ I’m of course referring to timing the programs you run and scripts you write, 
       
       <guid>https://aays.github.io/post/migrating-to-hugo-blogdown/</guid>
       <description>Introduction So my shiny new Hugo/blogdown website has been up for two weeks now without me having posted anything about it, which goes to show that this second tweet:
-Will probably put together a blog post detailing how I made this work if I get time over the weekend. It&amp;#39;s super worth it if you&amp;#39;re looking to switch - not to mention how neat it is to develop and manage a site entirely through RStudio</description>
+[UPDATE: Tweet redacted due to broken Twitter API.]
+was maybe a little optimistic. But better late than never! In this post, I’ll be discussing why I switched, how I got started, and a few key pointers that helped along the way.</description>
     </item>
     
     <item>

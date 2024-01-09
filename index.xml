@@ -47,7 +47,8 @@ I’m of course referring to timing the programs you run and scripts you write, 
       
       <guid>https://aays.github.io/post/migrating-to-hugo-blogdown/</guid>
       <description>Introduction So my shiny new Hugo/blogdown website has been up for two weeks now without me having posted anything about it, which goes to show that this second tweet:
-Will probably put together a blog post detailing how I made this work if I get time over the weekend. It&amp;#39;s super worth it if you&amp;#39;re looking to switch - not to mention how neat it is to develop and manage a site entirely through RStudio</description>
+[UPDATE: Tweet redacted due to broken Twitter API.]
+was maybe a little optimistic. But better late than never! In this post, I’ll be discussing why I switched, how I got started, and a few key pointers that helped along the way.</description>
     </item>
     
     <item>
@@ -132,7 +133,7 @@ Anyhow - sometimes, when dealing with large amounts of intermediate files in a p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/about/</guid>
-      <description>I’m currently a PhD candidate in Prof. Rob Ness’s lab at the University of Toronto Mississauga. I am broadly interested in meiotic recombination, and use lab-based and computational approaches to better understand how recombination rate variation affects genome evolution.
+      <description>I did my PhD in Prof. Rob Ness’s lab at the University of Toronto Mississauga. I am broadly interested in meiotic recombination, and use lab-based and computational approaches to better understand how recombination rate variation affects genome evolution.
 Outside of my research work, I am also passionate about teaching programming skills for scientific research, with an emphasis on reproducible and open science. I have taught several Carpentries workshops over the course of my PhD, in addition to running programming workshops at my campus with UofT Coders.</description>
     </item>
     
@@ -142,7 +143,7 @@ Outside of my research work, I am also passionate about teaching programming ski
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aays.github.io/vitae/</guid>
-      <description>Education   Ph.D. - University of Toronto Mississauga - 2017-present
+      <description>Education   Ph.D. - University of Toronto Mississauga - 2017-2022
  Computational &amp;amp; Evolutionary Genomics - Dept. of Cell and Systems Biology Supervisor: Prof. Rob Ness    B.Sc. (Hons.) - University of Toronto - 2012-2016 Majors in Human Biology, Cell &amp;amp; Systems Biology Thesis: Study of the endophytic bacterial and fungal communities inhabiting coconut palms infected by lethal yellowing-like phytoplasmas in Côte d’Ivoire. Supervisors: Prof. Keiko Yoshioka &amp;amp; Dr.</description>
     </item>
     
